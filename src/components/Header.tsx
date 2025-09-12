@@ -15,7 +15,7 @@ export const Header = () => {
               <Brain className="h-6 w-6 text-primary animate-neural-pulse" />
               <Zap className="absolute -top-1 -right-1 h-3 w-3 text-accent animate-glow" />
             </div>
-            <span className="text-xl font-bold glow-text">NeuroTech AI</span>
+            <span className="text-xl font-bold glow-text">NeuraX</span>
           </div>
 
           {/* Desktop Navigation */}
