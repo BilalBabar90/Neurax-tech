@@ -7,108 +7,105 @@ All colors MUST be HSL.
 */
 
 @layer base {
-    :root {
-        --background: 220 27% 4%;
-        --foreground: 210 40% 98%;
+  :root {
+    --background: 160 40% 97%; /* very light mint */
+    --foreground: 160 30% 12%;
 
-        --card: 220 23% 6%;
-        --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 12%;
 
-        --popover: 220 23% 6%;
-        --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 12%;
 
-        --primary: 217 91% 65%;
-        --primary-foreground: 220 27% 4%;
+    --primary: 160 75% 35%; /* teal green */
+    --primary-foreground: 0 0% 100%;
 
-        --secondary: 260 40% 20%;
-        --secondary-foreground: 210 40% 98%;
+    --secondary: 170 65% 45%; /* mint glow */
+    --secondary-foreground: 0 0% 100%;
 
-        --muted: 220 15% 15%;
-        --muted-foreground: 217 32% 65%;
+    --muted: 160 20% 90%;
+    --muted-foreground: 160 20% 35%;
 
-        --accent: 280 100% 70%;
-        --accent-foreground: 220 27% 4%;
+    --accent: 15 85% 55%; /* coral / peach */
+    --accent-foreground: 0 0% 100%;
 
-        --destructive: 0 84% 60%;
-        --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-        --border: 220 15% 15%;
-        --input: 220 15% 15%;
-        --ring: 217 91% 65%;
+    --border: 160 20% 85%;
+    --input: 160 20% 85%;
+    --ring: 160 75% 35%;
 
-        /* AI Tech Colors */
-        --neural-blue: 217 91% 65%;
-        --cyber-purple: 280 100% 70%;
-        --tech-dark: 220 27% 4%;
-        --glow-cyan: 180 100% 50%;
+    /* AI Glow Colors */
+    --neural-teal: 160 75% 35%;
+    --cyber-mint: 170 65% 45%;
+    --tech-light: 160 40% 97%;
+    --glow-coral: 15 85% 55%;
 
-        /* Gradients */
-        --gradient-hero: linear-gradient(135deg, hsl(217 91% 65% / 0.1), hsl(280 100% 70% / 0.1));
-        --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(280 100% 70%));
-        --gradient-card: linear-gradient(145deg, hsl(220 23% 6%), hsl(220 15% 15%));
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(160 75% 35% / 0.15), hsl(170 65% 45% / 0.15));
+    --gradient-primary: linear-gradient(135deg, hsl(160 75% 35%), hsl(15 85% 55%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(160 20% 90%));
 
-        /* Animations */
-        --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        --shadow-glow: 0 0 40px hsl(217 91% 65% / 0.3);
-        --shadow-neural: 0 10px 30px -10px hsl(280 100% 70% / 0.2);
+    /* Glow */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-glow: 0 0 25px hsl(160 75% 35% / 0.4),
+                   0 0 45px hsl(15 85% 55% / 0.3);
+    --shadow-neural: 0 10px 25px -5px hsl(170 65% 45% / 0.25);
 
-        --radius: 0.75rem;
+    --radius: 0.75rem;
 
-        --sidebar-background: 0 0% 98%;
+    /* Sidebar */
+    --sidebar-background: 160 40% 95%;
+    --sidebar-foreground: 160 25% 20%;
+    --sidebar-primary: 160 75% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 15% 90%;
+    --sidebar-accent-foreground: 160 25% 20%;
+    --sidebar-border: 160 20% 85%;
+    --sidebar-ring: 160 75% 35%;
+  }
 
-        --sidebar-foreground: 240 5.3% 26.1%;
+  .dark {
+    --background: 160 20% 10%; /* very deep teal black */
+    --foreground: 160 40% 95%;
 
-        --sidebar-primary: 240 5.9% 10%;
+    --card: 160 20% 15%;
+    --card-foreground: 160 40% 95%;
 
-        --sidebar-primary-foreground: 0 0% 98%;
+    --popover: 160 20% 15%;
+    --popover-foreground: 160 40% 95%;
 
-        --sidebar-accent: 240 4.8% 95.9%;
+    --primary: 160 85% 45%; /* glowing teal */
+    --primary-foreground: 160 20% 10%;
 
-        --sidebar-accent-foreground: 240 5.9% 10%;
+    --secondary: 170 75% 50%; /* mint glow */
+    --secondary-foreground: 160 20% 10%;
 
-        --sidebar-border: 220 13% 91%;
+    --muted: 160 15% 20%;
+    --muted-foreground: 160 30% 70%;
 
-        --sidebar-ring: 217.2 91.2% 59.8%;
-    }
+    --accent: 15 85% 55%; /* coral pop */
+    --accent-foreground: 160 20% 10%;
 
-    .dark {
-        --background: 220 27% 4%;
-        --foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 160 40% 95%;
 
-        --card: 220 23% 6%;
-        --card-foreground: 210 40% 98%;
+    --border: 160 15% 20%;
+    --input: 160 15% 20%;
+    --ring: 160 85% 45%;
 
-        --popover: 220 23% 6%;
-        --popover-foreground: 210 40% 98%;
-
-        --primary: 217 91% 65%;
-        --primary-foreground: 220 27% 4%;
-
-        --secondary: 260 40% 20%;
-        --secondary-foreground: 210 40% 98%;
-
-        --muted: 220 15% 15%;
-        --muted-foreground: 217 32% 65%;
-
-        --accent: 280 100% 70%;
-        --accent-foreground: 220 27% 4%;
-
-        --destructive: 0 62% 50%;
-        --destructive-foreground: 210 40% 98%;
-
-        --border: 220 15% 15%;
-        --input: 220 15% 15%;
-        --ring: 217 91% 65%;
-        --sidebar-background: 240 5.9% 10%;
-        --sidebar-foreground: 240 4.8% 95.9%;
-        --sidebar-primary: 224.3 76.3% 48%;
-        --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 240 3.7% 15.9%;
-        --sidebar-accent-foreground: 240 4.8% 95.9%;
-        --sidebar-border: 240 3.7% 15.9%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
-    }
+    --sidebar-background: 160 20% 12%;
+    --sidebar-foreground: 160 40% 95%;
+    --sidebar-primary: 160 85% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 15% 20%;
+    --sidebar-accent-foreground: 160 40% 95%;
+    --sidebar-border: 160 15% 20%;
+    --sidebar-ring: 160 85% 45%;
+  }
 }
+
 
 @layer base {
     * {
