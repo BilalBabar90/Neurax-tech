@@ -15,7 +15,7 @@ const sections = [
   {
     id: "synth-qc",
     title: "Synth-QC",
-    pdfPath: "/Synth-QC.pdf",
+    pdfPath: "/Synth-QC_ AI-Powered Defect Detection.pdf",
     image: Picture1,
     content: (
       <div>
@@ -34,7 +34,7 @@ const sections = [
   {
     id: "deep-rad",
     title: "Deep-Rad",
-    pdfPath: "/Deep-Rad.pdf",
+    pdfPath: "/Deep-Rad_ Privacy-Preserving Medical Diagnostics.pdf",
     image: Picture2,
     content: (
       <div>
@@ -53,7 +53,7 @@ const sections = [
   {
     id: "urban-flow",
     title: "Urban-Flow",
-    pdfPath: "/Urban-Flow.pdf",
+    pdfPath: "/Urban-Flow_ Real-Time Traffic and Crowd Prediction.pdf",
     image: Picture3,
     content: (
       <div>
@@ -72,7 +72,7 @@ const sections = [
   {
     id: "lfa-net",
     title: "LFA-Net",
-    pdfPath: "/LFA-Net.pdf",
+    pdfPath: "/Fin-Narrate_ Explainable NLP for Market Intelligence.pdf",
     image: Picture4,
     content: (
       <div>
@@ -91,7 +91,7 @@ const sections = [
   {
     id: "neuro-guard",
     title: "Neuro-Guard",
-    pdfPath: "/Neuro-Guard.pdf",
+    pdfPath: "/Agri-Vision_ Autonomous Crop Health & Yield Forecasting.pdf",
     image: Picture5,
     content: (
       <div>
