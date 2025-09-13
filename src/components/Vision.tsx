@@ -21,8 +21,7 @@ const sections = [
       <div>
         <h2 className="text-2xl font-bold mb-4">Synth-QC</h2>
         <p className="text-muted-foreground">
-          AI-powered quality control system for synthetic data validation and
-          augmentation in ML workflows.
+          AI-Powered Defect Detection Using Synthetic Data
         </p>
       </div>
     ),
@@ -40,15 +39,14 @@ const sections = [
       <div>
         <h2 className="text-2xl font-bold mb-4">Deep-Rad</h2>
         <p className="text-muted-foreground">
-          Advanced deep learning model for radiology image interpretation,
-          supporting early diagnosis and anomaly detection.
+          Privacy-Preserving Medical Diagnostics via Federated Learning
         </p>
       </div>
     ),
     Problem:
-      "Medical imaging faces challenges with early detection of rare conditions and accurate interpretation of complex scans, leading to delayed diagnoses and increased healthcare costs.",
+      "The healthcare industry's vast patient data is invaluable for training diagnostic AI, but its use is severely restricted by privacy regulations like HIPAA and GDPR. The inability to centralize this sensitive data is the biggest barrier to developing more accurate medical AI..",
     Solution:
-      "Deep-Rad leverages state-of-the-art deep learning algorithms to analyze medical images with unprecedented accuracy, enabling early detection of anomalies and providing decision support to radiologists for improved patient outcomes.",
+      "Deep-Rad uses Federated Learning, a distributed approach where the AI model is sent to the data. Hospitals train the model on their local servers, sending only non-sensitive 'learnings' back. This builds a powerful global model without any patient data ever leaving its source, ensuring full privacy compliance.",
   },
   {
     id: "urban-flow",
@@ -59,53 +57,50 @@ const sections = [
       <div>
         <h2 className="text-2xl font-bold mb-4">Urban-Flow</h2>
         <p className="text-muted-foreground">
-          AI-driven urban planning simulation tool analyzing traffic,
-          sustainability, and infrastructure efficiency.
+          Real-Time Traffic and Crowd Prediction for Smart Cities
         </p>
       </div>
     ),
     Problem:
-      "Rapid urbanization creates complex challenges in traffic management, resource allocation, and infrastructure planning, leading to congestion, pollution, and inefficient city operations.",
+      "City governments and public safety officials struggle to manage traffic congestion, public transit overload, and crowd control. Without accurate, real-time predictive data, decision-making is reactive, often leading to gridlock, delayed emergency services, and inefficient resource allocation.",
     Solution:
-      "Urban-Flow uses advanced simulation and predictive analytics to model urban environments, optimize traffic flow, and plan sustainable infrastructure development for smarter, more efficient cities.",
+      "Urban-Flow uses a city's existing CCTV network to accurately predict traffic and crowd movement up to an hour in advance. Our platform provides an intuitive dashboard that allows city officials to take proactive measures to manage traffic, public transport, and emergency response, improving efficiency and public safety.",
   },
   {
     id: "lfa-net",
-    title: "LFA-Net",
+    title: "Fin-Narrate",
     pdfPath: "/Fin-Narrate_ Explainable NLP for Market Intelligence.pdf",
     image: Picture4,
     content: (
       <div>
-        <h2 className="text-2xl font-bold mb-4">LFA-Net</h2>
+        <h2 className="text-2xl font-bold mb-4">Fin-Narrate</h2>
         <p className="text-muted-foreground">
-          Lightweight Feature Attention Network optimized for real-time mobile
-          AI applications.
+          Explainable NLP for Market Intelligence
         </p>
       </div>
     ),
     Problem:
-      "Deploying AI models on mobile and edge devices is challenging due to computational constraints, latency issues, and battery life limitations, restricting the potential of on-device AI applications.",
+      "In financial markets, traditional sentiment analysis isn't enough. Investors need to know 'why' sentiment is changing, but existing tools are black boxes. Analysts waste time manually sifting through data to find the real narrative, an expensive and ineffective process.",
     Solution:
-      "LFA-Net is a novel neural architecture that combines lightweight design with attention mechanisms, enabling efficient AI inference on resource-constrained devices without compromising accuracy or performance.",
+      "LFin-Narrate moves beyond sentiment analysis using advanced NLP and Explainable AI (XAI) to identify core narratives influencing markets. Our key XAI layer provides transparent, human-readable explanations, giving investors truly actionable intelligence for faster, more confident decisions.",
   },
   {
     id: "neuro-guard",
-    title: "Neuro-Guard",
+    title: "Agri-Vision",
     pdfPath: "/Agri-Vision_ Autonomous Crop Health & Yield Forecasting.pdf",
     image: Picture5,
     content: (
       <div>
-        <h2 className="text-2xl font-bold mb-4">Neuro-Guard</h2>
+        <h2 className="text-2xl font-bold mb-4">Agri-Vision</h2>
         <p className="text-muted-foreground">
-          Next-generation AI cybersecurity engine leveraging neural anomaly
-          detection.
+          Autonomous Crop Health & Yield Forecasting
         </p>
       </div>
     ),
     Problem:
-      "Traditional cybersecurity solutions struggle to detect sophisticated, evolving threats and zero-day attacks, leaving organizations vulnerable to data breaches and system compromises.",
+      "The agricultural industry is pressured to increase food production sustainably. Up to 40% of global crop production is lost to pests and diseases, costing the economy over $220 billion annually. Traditional monitoring is manual and often detects problems too late to prevent significant loss.",
     Solution:
-      "Neuro-Guard employs advanced neural networks for anomaly detection, continuously learning from network behavior to identify and respond to emerging threats in real-time, providing proactive defense against cyber attacks.",
+      "Agri-Vision is an AI platform using autonomous drones with multispectral cameras to survey fields. Our CV models detect early signs of plant stress, disease, and infestation. By fusing this with weather and soil data, our models provide accurate yield forecasts and actionable insights for farmers.",
   },
 ];
 
@@ -152,11 +147,10 @@ export default function VisionSections() {
             <button
               key={section.id}
               onClick={() => setActiveSection(section.id)}
-              className={`px-6 py-2 rounded-full border transition-all ${
-                activeSection === section.id
+              className={`px-6 py-2 rounded-full border transition-all ${activeSection === section.id
                   ? "bg-primary text-white shadow-lg"
                   : "bg-muted/20 hover:bg-primary/10"
-              }`}
+                }`}
             >
               {section.title}
             </button>
@@ -176,12 +170,12 @@ export default function VisionSections() {
           {/* Problem and Solution */}
           <div className="mt-8 text-left">
             <div className="mb-6 p-6 bg-muted/20 rounded-lg">
-              <h3 className="text-xl font-bold mb-3 text-primary">Problem</h3>
+              <h3 className="text-xl font-bold mb-3 text-primary">The Problem</h3>
               <p className="text-muted-foreground">{activeData?.Problem}</p>
             </div>
 
             <div className="p-6 bg-primary/5 rounded-lg">
-              <h3 className="text-xl font-bold mb-3 text-primary">Solution</h3>
+              <h3 className="text-xl font-bold mb-3 text-primary">The Solution</h3>
               <p className="text-muted-foreground">{activeData?.Solution}</p>
             </div>
           </div>
