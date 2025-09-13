@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Startup Project Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e7eff5);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        .nav-button {
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-button.active {
+            background: #0c4a6e;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .project-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .project-section.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <!-- Chosen Palette: Ocean Gradient (Subtle cool blues and grays for background, with deep blues and teals for accents). -->
+    <!-- Application Structure Plan: A single-page application with a fixed top header containing the main title and a horizontal, animated navigation bar for quick access to each project. This provides a clear hierarchy with the overall vision at the top and the specific projects listed below. Each project section animates into view as the user scrolls, creating an engaging and dynamic experience. The modular layout within each section remains for clarity, with problem/solution, core technologies, and a market analysis section featuring diverse charts. -->
+    <!-- Visualization & Content Choices: The application uses a variety of charts to visually represent key data. 
+    1. Synth-QC: Bar Chart (Comparison), Horizontal Bar Chart (Efficiency Comparison), Line Chart (Trend).
+    2. Deep-Rad: Horizontal Bar Chart (Comparison), Doughnut Chart (Proportion), Line Chart (Trend).
+    3. Urban-Flow: Vertical Bar Chart (Comparison), Pie Chart (Proportion), Line Chart (Trend).
+    4. Fin-Narrate: Radar Chart (Multifactor Comparison), Doughnut Chart (Proportion), Line Chart (Trend).
+    5. Agri-Vision: Grouped Bar Chart (Comparison), Line Chart (Trend), Line Chart (Trend).
+    All charts are created using Chart.js (Canvas) for dynamic, interactive data representation, ensuring they are responsive and correctly sized within their containers. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+
+<body class="text-slate-800">
+    <div class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-50 bg-white shadow-md">
+            <div class="p-4 max-w-7xl mx-auto">
+                <h1 class="text-3xl font-bold text-slate-900 mb-2">Vision 25-26</h1>
+                <h2 class="text-xl font-semibold text-slate-700 mb-4">Our Projects</h2>
+                <div class="flex-1 overflow-x-auto overflow-y-hidden whitespace-nowrap scrollbar-hide">
+                    <div class="inline-flex space-x-2 p-2">
+                        <button class="nav-button bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-medium"
+                            data-target="synth-qc">Synth-QC</button>
+                        <button class="nav-button bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-medium"
+                            data-target="deep-rad">Deep-Rad</button>
+                        <button class="nav-button bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-medium"
+                            data-target="urban-flow">Urban-Flow</button>
+                        <button class="nav-button bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-medium"
+                            data-target="fin-narrate">Fin-Narrate</button>
+                        <button class="nav-button bg-slate-100 text-slate-700 px-4 py-2 rounded-full font-medium"
+                            data-target="agri-vision">Agri-Vision</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 p-4 sm:p-6 lg:p-8">
+            <div class="max-w-7xl mx-auto">
+
+                <section id="synth-qc" class="project-section space-y-8 py-8 scroll-mt-28">
+                    <div
+                        class="p-8 rounded-2xl shadow-sm border-t-4 border-sky-500 bg-gradient-to-br from-white to-sky-50">
+                        <h2 class="text-3xl font-bold text-slate-900">Synth-QC</h2>
+                        <p class="text-lg text-sky-700 font-medium mt-1">AI-Powered Defect Detection Using Synthetic
+                            Data</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Problem</h3>
+                            <p class="text-slate-600">High-precision manufacturing faces a critical challenge with AI
+                                visual inspection: a lack of high-quality, labeled data for rare but critical defects.
+                                This data scarcity limits AI scalability and reliability, leading to high error rates
+                                and increased operational costs.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Solution</h3>
+                            <p class="text-slate-600">Synth-QC is a generative AI platform that solves this data
+                                bottleneck. We use a proprietary GAN to create vast, diverse libraries of synthetic
+                                defect images. This perfectly labeled data trains hyper-accurate computer vision models
+                                for real-time quality control, achieving near-perfect detection for a fraction of the
+                                cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Market Opportunity & Impact</h3>
+                        <p class="text-slate-600 mb-6">This section visualizes the key performance indicators and market
+                            context for Synth-QC. The charts below demonstrate the project's superior accuracy compared
+                            to traditional methods, its significant cost-effectiveness, and the substantial growth
+                            projected for the AI in manufacturing market, highlighting the immense opportunity.</p>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Detection Accuracy</h4>
+                                <div class="chart-container"><canvas id="synthQcChart1"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Cost-Effectiveness</h4>
+                                <div class="chart-container"><canvas id="synthQcChart2"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">AI in Manufacturing Market Growth</h4>
+                                <div class="chart-container"><canvas id="synthQcChart3"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="deep-rad" class="project-section space-y-8 py-8 scroll-mt-28">
+                    <div
+                        class="p-8 rounded-2xl shadow-sm border-t-4 border-emerald-500 bg-gradient-to-br from-white to-emerald-50">
+                        <h2 class="text-3xl font-bold text-slate-900">Deep-Rad</h2>
+                        <p class="text-lg text-emerald-700 font-medium mt-1">Privacy-Preserving Medical Diagnostics via
+                            Federated Learning</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Problem</h3>
+                            <p class="text-slate-600">The healthcare industry's vast patient data is invaluable for
+                                training diagnostic AI, but its use is severely restricted by privacy regulations like
+                                HIPAA and GDPR. The inability to centralize this sensitive data is the biggest barrier
+                                to developing more accurate medical AI.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Solution</h3>
+                            <p class="text-slate-600">Deep-Rad uses Federated Learning, a distributed approach where the
+                                AI model is sent to the data. Hospitals train the model on their local servers, sending
+                                only non-sensitive 'learnings' back. This builds a powerful global model without any
+                                patient data ever leaving its source, ensuring full privacy compliance.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Market Opportunity & Impact</h3>
+                        <p class="text-slate-600 mb-6">The visualizations in this section illustrate the compelling case
+                            for Deep-Rad. The charts highlight the platform's superior scalability, its unique ability
+                            to overcome widespread privacy barriers in healthcare, and the explosive growth forecasted
+                            for the AI in medical diagnostics market, which Deep-Rad is perfectly positioned to capture.
+                        </p>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Scalability & Training Time</h4>
+                                <div class="chart-container"><canvas id="deepRadChart1"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Addressing Privacy Barriers</h4>
+                                <div class="chart-container"><canvas id="deepRadChart2"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">AI in Diagnostics Market Growth</h4>
+                                <div class="chart-container"><canvas id="deepRadChart3"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="urban-flow" class="project-section space-y-8 py-8 scroll-mt-28">
+                    <div
+                        class="p-8 rounded-2xl shadow-sm border-t-4 border-indigo-500 bg-gradient-to-br from-white to-indigo-50">
+                        <h2 class="text-3xl font-bold text-slate-900">Urban-Flow</h2>
+                        <p class="text-lg text-indigo-700 font-medium mt-1">Real-Time Traffic and Crowd Prediction for
+                            Smart Cities</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Problem</h3>
+                            <p class="text-slate-600">City governments and public safety officials struggle to manage
+                                traffic congestion, public transit overload, and crowd control. Without accurate,
+                                real-time predictive data, decision-making is reactive, often leading to gridlock,
+                                delayed emergency services, and inefficient resource allocation.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Solution</h3>
+                            <p class="text-slate-600">Urban-Flow uses a city's existing CCTV network to accurately
+                                predict traffic and crowd movement up to an hour in advance. Our platform provides an
+                                intuitive dashboard that allows city officials to take proactive measures to manage
+                                traffic, public transport, and emergency response, improving efficiency and public
+                                safety.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Market Opportunity & Impact</h3>
+                        <p class="text-slate-600 mb-6">The data presented here underscores the value of Urban-Flow. The
+                            charts detail the platform's high predictive accuracy, the significant economic benefits
+                            cities can realize by reducing congestion, and the large, growing market for intelligent
+                            transportation systems that our solution is built to serve.</p>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Predictive Accuracy</h4>
+                                <div class="chart-container"><canvas id="urbanFlowChart1"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Economic Impact</h4>
+                                <div class="chart-container"><canvas id="urbanFlowChart2"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Intelligent Transport Market Growth</h4>
+                                <div class="chart-container"><canvas id="urbanFlowChart3"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="fin-narrate" class="project-section space-y-8 py-8 scroll-mt-28">
+                    <div
+                        class="p-8 rounded-2xl shadow-sm border-t-4 border-amber-500 bg-gradient-to-br from-white to-amber-50">
+                        <h2 class="text-3xl font-bold text-slate-900">Fin-Narrate</h2>
+                        <p class="text-lg text-amber-700 font-medium mt-1">Explainable NLP for Market Intelligence</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Problem</h3>
+                            <p class="text-slate-600">In financial markets, traditional sentiment analysis isn't enough.
+                                Investors need to know 'why' sentiment is changing, but existing tools are black boxes.
+                                Analysts waste time manually sifting through data to find the real narrative, an
+                                expensive and ineffective process.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Solution</h3>
+                            <p class="text-slate-600">Fin-Narrate moves beyond sentiment analysis using advanced NLP and
+                                Explainable AI (XAI) to identify core narratives influencing markets. Our key XAI layer
+                                provides transparent, human-readable explanations, giving investors truly actionable
+                                intelligence for faster, more confident decisions.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Market Opportunity & Impact</h3>
+                        <p class="text-slate-600 mb-6">This section showcases Fin-Narrate's competitive edge and market
+                            relevance. The radar chart illustrates its superior capabilities beyond simple sentiment
+                            analysis, another chart quantifies the dramatic efficiency gains for financial analysts, and
+                            the final line chart projects the exponential growth of the NLP in Finance market.</p>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Capability Comparison</h4>
+                                <div class="chart-container"><canvas id="finNarrateChart1"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Efficiency & Time Savings</h4>
+                                <div class="chart-container"><canvas id="finNarrateChart2"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">NLP in Finance Market Growth</h4>
+                                <div class="chart-container"><canvas id="finNarrateChart3"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="agri-vision" class="project-section space-y-8 py-8 scroll-mt-28">
+                    <div
+                        class="p-8 rounded-2xl shadow-sm border-t-4 border-lime-500 bg-gradient-to-br from-white to-lime-50">
+                        <h2 class="text-3xl font-bold text-slate-900">Agri-Vision</h2>
+                        <p class="text-lg text-lime-700 font-medium mt-1">Autonomous Crop Health & Yield Forecasting</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Problem</h3>
+                            <p class="text-slate-600">The agricultural industry is pressured to increase food production
+                                sustainably. Up to 40% of global crop production is lost to pests and diseases, costing
+                                the economy over $220 billion annually. Traditional monitoring is manual and often
+                                detects problems too late to prevent significant loss.</p>
+                        </div>
+                        <div class="p-8 bg-white rounded-2xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-2">The Solution</h3>
+                            <p class="text-slate-600">Agri-Vision is an AI platform using autonomous drones with
+                                multispectral cameras to survey fields. Our CV models detect early signs of plant
+                                stress, disease, and infestation. By fusing this with weather and soil data, our models
+                                provide accurate yield forecasts and actionable insights for farmers.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-8 bg-white rounded-2xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-4">Market Opportunity & Impact</h3>
+                        <p class="text-slate-600 mb-6">The data here illustrates Agri-Vision's transformative potential
+                            for modern farming. The charts show the direct, measurable impact on farm operations through
+                            reduced crop loss and pesticide use, the significant yield maximization over time, and the
+                            rapidly growing precision farming market our solution targets.</p>
+                        <div class="grid lg:grid-cols-3 gap-8">
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Impact on Farm Operations</h4>
+                                <div class="chart-container"><canvas id="agriVisionChart1"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Yield Maximization</h4>
+                                <div class="chart-container"><canvas id="agriVisionChart2"></canvas></div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h4 class="font-semibold text-center mb-2">Precision Farming Market Growth</h4>
+                                <div class="chart-container"><canvas id="agriVisionChart3"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const chartData = {
+                synthQC: {
+                    chart1: {
+                        type: 'bar',
+                        data: {
+                            labels: ['Traditional Methods', 'Synth-QC'],
+                            datasets: [{
+                                label: 'Detection Accuracy',
+                                data: [88, 99.5],
+                                backgroundColor: ['#3b82f6', '#1d4ed8'],
+                                borderColor: ['#2563eb', '#1e40af'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { scales: { y: { beginAtZero: true, max: 100, ticks: { callback: value => value + '%' } } } }
+                    },
+                    chart2: {
+                        type: 'bar',
+                        data: {
+                            labels: ['Traditional Model', 'Synth-QC Model'],
+                            datasets: [{
+                                label: 'Deployment Cost & Time Index',
+                                data: [100, 40],
+                                backgroundColor: ['#3b82f6', '#1d4ed8'],
+                                borderColor: ['#2563eb', '#1e40af'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { indexAxis: 'y', plugins: { legend: { display: false } } }
+                    },
+                    chart3: {
+                        type: 'line',
+                        data: {
+                            labels: ['2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032'],
+                            datasets: [{
+                                label: 'Market Size ($ Billions)',
+                                data: [7.6, 11.2, 16.5, 24.3, 33.1, 42.5, 52.8, 62.0],
+                                fill: true,
+                                borderColor: '#1d4ed8',
+                                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                                tension: 0.4
+                            }]
+                        }
+                    }
+                },
+                deepRad: {
+                    chart1: {
+                        type: 'bar',
+                        data: {
+                            labels: ['Centralized Data Lake', 'Deep-Rad Federated Learning'],
+                            datasets: [{
+                                label: 'Time & Resources Index',
+                                data: [100, 35],
+                                backgroundColor: ['#10b981', '#065f46'],
+                                borderColor: ['#059669', '#047857'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { indexAxis: 'y', plugins: { legend: { display: false } } }
+                    },
+                    chart2: {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Hesitant to Centralize Data', 'Willing to Centralize'],
+                            datasets: [{
+                                data: [90, 10],
+                                backgroundColor: ['#065f46', '#d1fae5'],
+                                hoverOffset: 4
+                            }]
+                        }
+                    },
+                    chart3: {
+                        type: 'line',
+                        data: {
+                            labels: ['2025', '2027', '2029', '2031', '2033', '2035'],
+                            datasets: [{
+                                label: 'Market Size ($ Billions)',
+                                data: [2.8, 4.3, 6.6, 9.5, 13.0, 17.1],
+                                fill: true,
+                                borderColor: '#065f46',
+                                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                                tension: 0.4
+                            }]
+                        }
+                    }
+                },
+                urbanFlow: {
+                    chart1: {
+                        type: 'bar',
+                        data: {
+                            labels: ['Traditional Forecasts', 'Urban-Flow'],
+                            datasets: [{
+                                label: 'Predictive Accuracy',
+                                data: [75, 95],
+                                backgroundColor: ['#818cf8', '#4f46e5'],
+                                borderColor: ['#6366f1', '#4338ca'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: { scales: { y: { beginAtZero: true, max: 100, ticks: { callback: value => value + '%' } } } }
+                    },
+                    chart2: {
+                        type: 'pie',
+                        data: {
+                            labels: ['Annual Gain ($ Millions)', 'Rest of Market'],
+                            datasets: [{
+                                data: [500, 2000],
+                                backgroundColor: ['#4f46e5', '#e0e7ff'],
+                                hoverOffset: 4
+                            }]
+                        }
+                    },
+                    chart3: {
+                        type: 'line',
+                        data: {
+                            labels: ['2025', '2026', '2027', '2028', '2029', '2030'],
+                            datasets: [{
+                                label: 'Market Size ($ Billions)',
+                                data: [42.5, 46.3, 50.4, 54.9, 59.8, 65.1],
+                                fill: true,
+                                borderColor: '#4f46e5',
+                                backgroundColor: 'rgba(129, 140, 248, 0.2)',
+                                tension: 0.4
+                            }]
+                        }
+                    }
+                },
+                finNarrate: {
+                    chart1: {
+                        type: 'radar',
+                        data: {
+                            labels: ['Sentiment Score', 'Narrative ID', 'Explainability', 'Speed', 'Contextual Insight'],
+                            datasets: [{
+                                label: 'Fin-Narrate',
+                                data: [8, 9, 10, 8, 9.5],
+                                fill: true,
+                                backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                                borderColor: 'rgb(217, 119, 6)',
+                                pointBackgroundColor: 'rgb(217, 119, 6)',
+                            }, {
+                                label: 'Traditional Tools',
+                                data: [7, 3, 2, 6, 4],
+                                fill: true,
+                                backgroundColor: 'rgba(120, 113, 108, 0.2)',
+                                borderColor: 'rgb(120, 113, 108)',
+                                pointBackgroundColor: 'rgb(120, 113, 108)',
+                            }]
+                        },
+                        options: { scales: { r: { beginAtZero: true, max: 10 } } }
+                    },
+                    chart2: {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Time Saved on Manual Review', 'Remaining Time'],
+                            datasets: [{
+                                data: [80, 20],
+                                backgroundColor: ['#f59e0b', '#fef3c7'],
+                                hoverOffset: 4
+                            }]
+                        }
+                    },
+                    chart3: {
+                        type: 'line',
+                        data: {
+                            labels: ['2025', '2027', '2029', '2031', '2033', '2035'],
+                            datasets: [{
+                                label: 'Market Size ($ Billions)',
+                                data: [8.6, 14.2, 23.5, 38.8, 59.1, 80.0],
+                                fill: true,
+                                borderColor: '#f59e0b',
+                                backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                                tension: 0.4
+                            }]
+                        }
+                    }
+                },
+                agriVision: {
+                    chart1: {
+                        type: 'bar',
+                        data: {
+                            labels: ['Crop Loss', 'Pesticide Use'],
+                            datasets: [{
+                                label: 'Before Agri-Vision',
+                                data: [100, 100],
+                                backgroundColor: '#d9f99d',
+                            }, {
+                                label: 'With Agri-Vision',
+                                data: [20, 60],
+                                backgroundColor: '#84cc16',
+                            }]
+                        },
+                        options: { scales: { y: { ticks: { callback: value => value + '%' } } } }
+                    },
+                    chart2: {
+                        type: 'line',
+                        data: {
+                            labels: ['Year 0', 'Year 1', 'Year 2', 'Year 3'],
+                            datasets: [{
+                                label: 'Avg. Crop Yield Increase',
+                                data: [0, 8, 15, 22],
+                                fill: true,
+                                borderColor: '#84cc16',
+                                backgroundColor: 'rgba(132, 204, 22, 0.2)',
+                                tension: 0.1
+                            }]
+                        },
+                        options: { scales: { y: { ticks: { callback: value => '+' + value + '%' } } } }
+                    },
+                    chart3: {
+                        type: 'line',
+                        data: {
+                            labels: ['2025', '2027', '2029', '2031', '2032'],
+                            datasets: [{
+                                label: 'Market Size ($ Billions)',
+                                data: [9.1, 11.9, 15.5, 19.8, 21.0],
+                                fill: true,
+                                borderColor: '#84cc16',
+                                backgroundColor: 'rgba(217, 249, 215, 0.2)',
+                                tension: 0.4
+                            }]
+                        }
+                    }
+                }
+            };
+
+            function createChart(id, config) {
+                const ctx = document.getElementById(id);
+                if (ctx) {
+                    new Chart(ctx.getContext('2d'), {
+                        ...config,
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            ...config.options,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    ...config.options?.plugins?.legend
+                                },
+                                tooltip: {
+                                    backgroundColor: '#1e293b',
+                                    titleFont: { size: 14, weight: 'bold' },
+                                    bodyFont: { size: 12 },
+                                    padding: 10,
+                                    cornerRadius: 4,
+                                    displayColors: true,
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+
+            createChart('synthQcChart1', chartData.synthQC.chart1);
+            createChart('synthQcChart2', chartData.synthQC.chart2);
+            createChart('synthQcChart3', chartData.synthQC.chart3);
+
+            createChart('deepRadChart1', chartData.deepRad.chart1);
+            createChart('deepRadChart2', chartData.deepRad.chart2);
+            createChart('deepRadChart3', chartData.deepRad.chart3);
+
+            createChart('urbanFlowChart1', chartData.urbanFlow.chart1);
+            createChart('urbanFlowChart2', chartData.urbanFlow.chart2);
+            createChart('urbanFlowChart3', chartData.urbanFlow.chart3);
+
+            createChart('finNarrateChart1', chartData.finNarrate.chart1);
+            createChart('finNarrateChart2', chartData.finNarrate.chart2);
+            createChart('finNarrateChart3', chartData.finNarrate.chart3);
+
+            createChart('agriVisionChart1', chartData.agriVision.chart1);
+            createChart('agriVisionChart2', chartData.agriVision.chart2);
+            createChart('agriVisionChart3', chartData.agriVision.chart3);
+
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                    updateActiveButton(button);
+                });
+            });
+
+            const sections = document.querySelectorAll('.project-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.getAttribute('id');
+                        const targetButton = document.querySelector(`.nav-button[data-target="${targetId}"]`);
+                        if (targetButton) {
+                            updateActiveButton(targetButton);
+                        }
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            function updateActiveButton(activeButton) {
+                navButtons.forEach(button => {
+                    button.classList.remove('active', 'bg-slate-100');
+                    button.classList.add('bg-slate-100');
+                });
+                activeButton.classList.add('active');
+                activeButton.classList.remove('bg-slate-100');
+            }
+        });
+    </script>
+</body>
+
+</html> 
