@@ -151,7 +151,7 @@ export default function VisionSections() {
       )}
 
       <div className="text-center max-w-3xl mx-auto my-12">
-        <h2 className="text-4xl md:text-3xl font-bold mb-6 text-green-600">
+        <h2 className="text-4xl md:text-3xl font-bold mb-6 text-blue-600">
           Let’s map your shortest route to AI success
         </h2>
         <p className="text-lg text-muted-foreground mb-6">
@@ -159,7 +159,7 @@ export default function VisionSections() {
         </p>
         <a
           href="#contact"
-          className="inline-block px-6 py-3 rounded-full bg-green-600 text-white font-semibold shadow-md hover:bg-purple-700 transition"
+          className="inline-block px-6 py-3 rounded-full bg-blue-600 text-white font-semibold shadow-md hover:bg-purple-700 transition"
         >
           Let’s Talk
           <span className="ml-2">→</span>
