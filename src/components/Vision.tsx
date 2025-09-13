@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
 import { FlagShip } from "@/components/ui/FlagShip"; 
-import {WhyChooseUs} from "@/components/ui/WhyChooseUs"
+import { SectionCharts } from "@/components/ui/SectionCharts";
 
 import Picture1 from "../images/Picture1.png";
 import Picture2 from "../images/Picture2.png";
@@ -27,9 +27,9 @@ const sections = [
       </div>
     ),
     Problem:
-      "High-precision manufacturing faces a critical challenge with AI visual inspection: a lack of high-quality, labeled data for rare but critical defects. This data scarcity limits AI scalability and reliability, leading to high error rates and increased operational costs.",
+      "High-precision manufacturing faces a critical challenge with AI visual inspection: a lack of high-quality, labeled data...",
     Solution:
-      "Synth-QC is a generative AI platform that solves this data bottleneck. We use a proprietary GAN to create vast, diverse libraries of synthetic defect images. This perfectly labeled data trains hyper-accurate computer vision models for real-time quality control, achieving near-perfect detection for a fraction of the cost.",
+      "Synth-QC is a generative AI platform that solves this data bottleneck...",
   },
   {
     id: "deep-rad",
@@ -45,9 +45,9 @@ const sections = [
       </div>
     ),
     Problem:
-      "The healthcare industry's vast patient data is invaluable for training diagnostic AI, but its use is severely restricted by privacy regulations like HIPAA and GDPR. The inability to centralize this sensitive data is the biggest barrier to developing more accurate medical AI..",
+      "The healthcare industry's vast patient data is invaluable...",
     Solution:
-      "Deep-Rad uses Federated Learning, a distributed approach where the AI model is sent to the data. Hospitals train the model on their local servers, sending only non-sensitive 'learnings' back. This builds a powerful global model without any patient data ever leaving its source, ensuring full privacy compliance.",
+      "Deep-Rad uses Federated Learning...",
   },
   {
     id: "urban-flow",
@@ -62,10 +62,8 @@ const sections = [
         </p>
       </div>
     ),
-    Problem:
-      "City governments and public safety officials struggle to manage traffic congestion, public transit overload, and crowd control. Without accurate, real-time predictive data, decision-making is reactive, often leading to gridlock, delayed emergency services, and inefficient resource allocation.",
-    Solution:
-      "Urban-Flow uses a city's existing CCTV network to accurately predict traffic and crowd movement up to an hour in advance. Our platform provides an intuitive dashboard that allows city officials to take proactive measures to manage traffic, public transport, and emergency response, improving efficiency and public safety.",
+    Problem: "City governments struggle to manage congestion...",
+    Solution: "Urban-Flow uses a city's CCTV network...",
   },
   {
     id: "lfa-net",
@@ -80,10 +78,8 @@ const sections = [
         </p>
       </div>
     ),
-    Problem:
-      "In financial markets, traditional sentiment analysis isn't enough. Investors need to know 'why' sentiment is changing, but existing tools are black boxes. Analysts waste time manually sifting through data to find the real narrative, an expensive and ineffective process.",
-    Solution:
-      "LFin-Narrate moves beyond sentiment analysis using advanced NLP and Explainable AI (XAI) to identify core narratives influencing markets. Our key XAI layer provides transparent, human-readable explanations, giving investors truly actionable intelligence for faster, more confident decisions.",
+    Problem: "In financial markets, traditional sentiment analysis isn't enough...",
+    Solution: "Fin-Narrate moves beyond sentiment analysis...",
   },
   {
     id: "neuro-guard",
@@ -98,10 +94,8 @@ const sections = [
         </p>
       </div>
     ),
-    Problem:
-      "The agricultural industry is pressured to increase food production sustainably. Up to 40% of global crop production is lost to pests and diseases, costing the economy over $220 billion annually. Traditional monitoring is manual and often detects problems too late to prevent significant loss.",
-    Solution:
-      "Agri-Vision is an AI platform using autonomous drones with multispectral cameras to survey fields. Our CV models detect early signs of plant stress, disease, and infestation. By fusing this with weather and soil data, our models provide accurate yield forecasts and actionable insights for farmers.",
+    Problem: "The agricultural industry is pressured to increase food production...",
+    Solution: "Agri-Vision is an AI platform using autonomous drones...",
   },
 ];
 
@@ -133,14 +127,10 @@ export default function VisionSections() {
             <span className="glow-text">Vision 2025-2026</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Real-world AI implementations that have transformed businesses and
-            delivered measurable results
+            Real-world AI implementations that have transformed businesses...
           </p>
         </div>
       </div>
-
-
-
 
       <div className="container mx-auto px-6 mt-9">
         <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
@@ -148,7 +138,7 @@ export default function VisionSections() {
             <span className="glow-text">Flagship Proposal (25-26 Vision)</span>
           </h2>
           <p className="text-l text-muted-foreground">
-            A strategic initiative driving innovation, scalability, and global impact—our cornerstone for shaping the future.
+            A strategic initiative driving innovation...
           </p>
         </div>
       </div>
@@ -161,10 +151,11 @@ export default function VisionSections() {
             <button
               key={section.id}
               onClick={() => setActiveSection(section.id)}
-              className={`px-6 py-2 rounded-full border transition-all ${activeSection === section.id
-                ? "bg-primary text-white shadow-lg"
-                : "bg-muted/20 hover:bg-primary/10"
-                }`}
+              className={`px-6 py-2 rounded-full border transition-all ${
+                activeSection === section.id
+                  ? "bg-primary text-white shadow-lg"
+                  : "bg-muted/20 hover:bg-primary/10"
+              }`}
             >
               {section.title}
             </button>
@@ -194,7 +185,7 @@ export default function VisionSections() {
             </div>
           </div>
 
-          {/* Image (click to expand) */}
+          {/* Image */}
           {activeData?.image && (
             <div className="mb-6 rounded-lg overflow-hidden shadow-lg cursor-pointer">
               <img
@@ -206,10 +197,15 @@ export default function VisionSections() {
             </div>
           )}
 
+          {/* Charts */}
+          <SectionCharts sectionId={activeSection} />
+
           {/* Action Buttons */}
           <div className="flex gap-3 pt-2">
             <button
-              onClick={() => handleDownload(activeData?.pdfPath!, activeData?.title!)}
+              onClick={() =>
+                handleDownload(activeData?.pdfPath!, activeData?.title!)
+              }
               className="flex-1 px-4 py-2 rounded-full font-semibold text-white transition-all duration-200 hover:opacity-90 bg-gradient-to-r from-primary to-accent"
             >
               <Download className="inline mr-2 h-4 w-4" />
@@ -245,7 +241,7 @@ export default function VisionSections() {
           Let’s map your shortest route to AI success
         </h2>
         <p className="text-lg text-muted-foreground mb-6">
-          Our experts will map the fastest route from idea to impact starting with a conversation.
+          Our experts will map the fastest route...
         </p>
         <a
           href="#contact"
@@ -255,7 +251,6 @@ export default function VisionSections() {
           <span className="ml-2">→</span>
         </a>
       </div>
-
     </section>
   );
 }
