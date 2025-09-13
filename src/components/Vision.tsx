@@ -138,6 +138,19 @@ export default function VisionSections() {
         </div>
       </div>
 
+
+
+
+      <div className="container mx-auto px-6 mt-9">
+        <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
+          <h2 className="text-4xl md:text-2xl font-bold mb-6">
+            <span className="glow-text">Flagship Proposal (25-26 Vision)</span>
+          </h2>
+          <p className="text-l text-muted-foreground">
+            A strategic initiative driving innovation, scalability, and global impact—our cornerstone for shaping the future.
+          </p>
+        </div>
+      </div>
       <FlagShip />
 
       <div className="container mx-auto px-6">
@@ -148,8 +161,8 @@ export default function VisionSections() {
               key={section.id}
               onClick={() => setActiveSection(section.id)}
               className={`px-6 py-2 rounded-full border transition-all ${activeSection === section.id
-                  ? "bg-primary text-white shadow-lg"
-                  : "bg-muted/20 hover:bg-primary/10"
+                ? "bg-primary text-white shadow-lg"
+                : "bg-muted/20 hover:bg-primary/10"
                 }`}
             >
               {section.title}
@@ -225,6 +238,23 @@ export default function VisionSections() {
           />
         </div>
       )}
+
+      <div className="text-center max-w-3xl mx-auto my-12">
+        <h2 className="text-4xl md:text-3xl font-bold mb-6 text-purple-600">
+          Let’s map your shortest route to AI success
+        </h2>
+        <p className="text-lg text-muted-foreground mb-6">
+          Our experts will map the fastest route from idea to impact starting with a conversation.
+        </p>
+        <a
+          href="#contact"
+          className="inline-block px-6 py-3 rounded-full bg-purple-600 text-white font-semibold shadow-md hover:bg-purple-700 transition"
+        >
+          Let’s Talk
+          <span className="ml-2">→</span>
+        </a>
+      </div>
+
     </section>
   );
 }
