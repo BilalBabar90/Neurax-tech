@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, ExternalLink } from "lucide-react";
-import { FlagShip } from "@/components/ui/FlagShip";
+import { FlagShip } from "@/components/ui/FlagShip"; 
+import {WhyChooseUs} from "@/components/ui/WhyChooseUs"
 
 import Picture1 from "../images/Picture1.png";
 import Picture2 from "../images/Picture2.png";

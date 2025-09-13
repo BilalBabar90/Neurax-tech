@@ -13,6 +13,8 @@ import {
   Map,
   Rocket
 } from "lucide-react";
+// import {WhyChooseUs} from "@/components/ui/WhyChooseUs"
+
 
 export const About = () => {
   return (
@@ -197,6 +199,9 @@ export const About = () => {
           </Card>
         </div>
       </div>
+
+
+      {/* <WhyChooseUs/> */}
 
     </section>
   );
