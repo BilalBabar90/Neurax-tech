@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Download, ExternalLink } from "lucide-react";
 import { FlagShip } from "@/components/ui/FlagShip";
 
 import Picture1 from "../images/Picture1.png";
@@ -14,6 +15,8 @@ const sections = [
   {
     id: "synth-qc",
     title: "Synth-QC",
+    pdfPath: "/Synth-QC.pdf",
+    image: Picture1,
     content: (
       <div>
         <h2 className="text-2xl font-bold mb-4">Synth-QC</h2>
@@ -27,11 +30,11 @@ const sections = [
       "High-precision manufacturing faces a critical challenge with AI visual inspection: a lack of high-quality, labeled data for rare but critical defects. This data scarcity limits AI scalability and reliability, leading to high error rates and increased operational costs.",
     Solution:
       "Synth-QC is a generative AI platform that solves this data bottleneck. We use a proprietary GAN to create vast, diverse libraries of synthetic defect images. This perfectly labeled data trains hyper-accurate computer vision models for real-time quality control, achieving near-perfect detection for a fraction of the cost.",
-    image: Picture1,
   },
   {
     id: "deep-rad",
     title: "Deep-Rad",
+    pdfPath: "/Deep-Rad.pdf",
     image: Picture2,
     content: (
       <div>
@@ -50,6 +53,7 @@ const sections = [
   {
     id: "urban-flow",
     title: "Urban-Flow",
+    pdfPath: "/Urban-Flow.pdf",
     image: Picture3,
     content: (
       <div>
@@ -68,6 +72,7 @@ const sections = [
   {
     id: "lfa-net",
     title: "LFA-Net",
+    pdfPath: "/LFA-Net.pdf",
     image: Picture4,
     content: (
       <div>
@@ -86,6 +91,7 @@ const sections = [
   {
     id: "neuro-guard",
     title: "Neuro-Guard",
+    pdfPath: "/Neuro-Guard.pdf",
     image: Picture5,
     content: (
       <div>
@@ -105,9 +111,23 @@ const sections = [
 
 export default function VisionSections() {
   const [activeSection, setActiveSection] = useState("synth-qc");
-  const [modalImage, setModalImage] = useState(null); // store clicked image
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
   const activeData = sections.find((s) => s.id === activeSection);
+
+  const handleDownload = (pdfPath: string, title: string) => {
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = `${title.replace(/\s+/g, "-").toLowerCase()}-case-study.pdf`;
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handlePreview = (pdfPath: string) => {
+    window.open(pdfPath, "_blank");
+  };
 
   return (
     <section className="bg-gradient-to-b from-background to-muted/20">
@@ -177,6 +197,24 @@ export default function VisionSections() {
               />
             </div>
           )}
+
+          {/* Action Buttons */}
+          <div className="flex gap-3 pt-2">
+            <button
+              onClick={() => handleDownload(activeData?.pdfPath!, activeData?.title!)}
+              className="flex-1 px-4 py-2 rounded-full font-semibold text-white transition-all duration-200 hover:opacity-90 bg-gradient-to-r from-primary to-accent"
+            >
+              <Download className="inline mr-2 h-4 w-4" />
+              Download Case Study
+            </button>
+            <button
+              onClick={() => handlePreview(activeData?.pdfPath!)}
+              className="px-4 py-2 rounded-full font-semibold border transition-all duration-200 hover:opacity-90 border-primary/50 text-primary hover:bg-primary/10"
+            >
+              <ExternalLink className="inline mr-2 h-4 w-4" />
+              Preview
+            </button>
+          </div>
         </motion.div>
       </div>
 
