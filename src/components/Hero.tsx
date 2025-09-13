@@ -20,7 +20,7 @@ export const Hero = () => {
       </div>
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 text-primary/20 animate-float">
+      {/* <div className="absolute top-20 left-10 text-primary/20 animate-float">
         <Cpu className="h-12 w-12" />
       </div>
       <div className="absolute top-40 right-16 text-accent/20 animate-float" style={{ animationDelay: '-2s' }}>
@@ -28,7 +28,7 @@ export const Hero = () => {
       </div>
       <div className="absolute bottom-32 left-20 text-primary/30 animate-float" style={{ animationDelay: '-4s' }}>
         <Sparkles className="h-8 w-8" />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
