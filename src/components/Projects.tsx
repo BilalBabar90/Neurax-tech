@@ -141,14 +141,17 @@ export const Projects = () => {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-8 mb-12">
           {caseStudies.map((study, index) => (
-            <Card key={index} className="service-card group p-6 h-full">
+            <Card
+              key={index}
+              className="service-card group p-6 h-full max-w-2xl mx-auto"
+            >
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
                   <div className={`p-3 rounded-xl ${study.color === 'primary'
-                      ? 'bg-primary/10 text-primary'
-                      : 'bg-accent/10 text-accent'
+                    ? 'bg-primary/10 text-primary'
+                    : 'bg-accent/10 text-accent'
                     } group-hover:${study.color === 'primary' ? 'bg-primary/20' : 'bg-accent/20'} transition-all duration-300`}>
                     <study.icon className="h-6 w-6" />
                   </div>
@@ -171,8 +174,8 @@ export const Projects = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-muted-foreground">Industry:</span>
                   <Badge variant="outline" className={`${study.color === 'primary'
-                      ? 'border-primary/50 text-primary'
-                      : 'border-accent/50 text-accent'
+                    ? 'border-primary/50 text-primary'
+                    : 'border-accent/50 text-accent'
                     }`}>
                     {study.industry}
                   </Badge>
@@ -232,8 +235,8 @@ export const Projects = () => {
                   <button
                     onClick={() => handleDownload(study.pdfPath, study.title)}
                     className={`flex-1 px-4 py-2 rounded-full font-semibold text-white transition-all duration-200 hover:opacity-90 ${study.color === 'primary'
-                        ? 'bg-gradient-to-r from-primary to-accent'
-                        : 'bg-gradient-to-r from-accent to-primary'
+                      ? 'bg-gradient-to-r from-primary to-accent'
+                      : 'bg-gradient-to-r from-accent to-primary'
                       }`}
                     style={{ zIndex: 10, position: 'relative' }}
                   >
@@ -243,8 +246,8 @@ export const Projects = () => {
                   <button
                     onClick={() => handlePreview(study.pdfPath)}
                     className={`px-4 py-2 rounded-full font-semibold border transition-all duration-200 hover:opacity-90 ${study.color === 'primary'
-                        ? 'border-primary/50 text-primary hover:bg-primary/10'
-                        : 'border-accent/50 text-accent hover:bg-accent/10'
+                      ? 'border-primary/50 text-primary hover:bg-primary/10'
+                      : 'border-accent/50 text-accent hover:bg-accent/10'
                       }`}
                     style={{ zIndex: 10, position: 'relative' }}
                   >
@@ -258,7 +261,7 @@ export const Projects = () => {
         </div>
 
         {/* Call-to-Action */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Card className="service-card max-w-2xl mx-auto p-8">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-4">Ready to Start Your AI Project?</h3>
@@ -287,7 +290,7 @@ export const Projects = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   );

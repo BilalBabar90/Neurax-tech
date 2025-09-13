@@ -7,6 +7,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import Vision from "@/components/Vision";
 
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -15,8 +16,8 @@ const Index = () => {
         <Hero />
         <Services />
         <About />
-        <Projects />
         <Vision />
+        <Projects />
         <Contact />
       </main>
       <Footer />

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Brain, Zap } from "lucide-react";
 import { useState } from "react";
+// import img from "../images/neurax.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,16 @@ export const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2 group">
-            <div className="relative p-2 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+            {/* <div className="relative p-2 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
               <Brain className="h-6 w-6 text-primary animate-neural-pulse" />
               <Zap className="absolute -top-1 -right-1 h-3 w-3 text-accent animate-glow" />
-            </div>
+            </div> */}
+            {/* <img
+              src={img}
+              alt="NeuraX Logo"
+              className="h-20 w-auto object-contain" // big logo (80px tall)
+            /> */}
+
             <span className="text-xl font-bold glow-text">NeuraX</span>
           </div>
 
@@ -26,11 +33,11 @@ export const Header = () => {
             <a href="#about" className="text-muted-foreground hover:text-primary transition-colors duration-300">
               About
             </a>
+            <a href="#vision" className="text-muted-foreground hover:text-primary transition-colors duration-300">
+              Vision 25-26
+            </a>
             <a href="#case_studies" className="text-muted-foreground hover:text-primary transition-colors duration-300">
               Case Studies
-            </a>
-            <a href="#vision" className="text-muted-foreground hover:text-primary transition-colors duration-300">
-              Vision 2025-2026
             </a>
             <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors duration-300">
               Contact
