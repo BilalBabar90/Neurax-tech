@@ -68,28 +68,6 @@ export const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Service Interest</label>
-                <div className="grid grid-cols-2 gap-3">
-                  <label className="flex items-center space-x-2 p-3 rounded-lg bg-muted/50 hover:bg-muted/70 cursor-pointer transition-colors duration-200">
-                    <input type="checkbox" className="rounded border-border text-primary focus:ring-primary" />
-                    <span className="text-sm">Computer Vision</span>
-                  </label>
-                  <label className="flex items-center space-x-2 p-3 rounded-lg bg-muted/50 hover:bg-muted/70 cursor-pointer transition-colors duration-200">
-                    <input type="checkbox" className="rounded border-border text-primary focus:ring-primary" />
-                    <span className="text-sm">LLM Solutions</span>
-                  </label>
-                  <label className="flex items-center space-x-2 p-3 rounded-lg bg-muted/50 hover:bg-muted/70 cursor-pointer transition-colors duration-200">
-                    <input type="checkbox" className="rounded border-border text-primary focus:ring-primary" />
-                    <span className="text-sm">IoT Integration</span>
-                  </label>
-                  <label className="flex items-center space-x-2 p-3 rounded-lg bg-muted/50 hover:bg-muted/70 cursor-pointer transition-colors duration-200">
-                    <input type="checkbox" className="rounded border-border text-primary focus:ring-primary" />
-                    <span className="text-sm">AI Consulting</span>
-                  </label>
-                </div>
-              </div>
-
-              <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Message</label>
                 <Textarea 
                   placeholder="Tell us about your project requirements and business goals..."
@@ -119,7 +97,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Email</div>
-                    <div className="text-sm text-muted-foreground">hello@neurotechai.com</div>
+                    <div className="text-sm text-muted-foreground">hello@neura-x.co</div>
                   </div>
                 </div>
 
@@ -129,7 +107,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">+1 (555) 123-4567</div>
+                    <div className="text-sm text-muted-foreground">+44 7459 625289</div>
                   </div>
                 </div>
 
@@ -139,7 +117,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Location</div>
-                    <div className="text-sm text-muted-foreground">Silicon Valley, CA</div>
+                    <div className="text-sm text-muted-foreground">London, UK</div>
                   </div>
                 </div>
 
@@ -149,42 +127,9 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Business Hours</div>
-                    <div className="text-sm text-muted-foreground">Mon-Fri: 9AM-6PM PST</div>
+                    <div className="text-sm text-muted-foreground">Mon-Fri: 9AM-6PM BST</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Actions */}
-            <Card className="service-card p-6">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold">Quick Actions</CardTitle>
-                <CardDescription>
-                  Get started immediately with these options
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-between border-primary/50 hover:bg-primary/10 text-primary rounded-full group"
-                >
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Schedule Free Consultation
-                  </div>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </Button>
-
-                <Button 
-                  variant="outline" 
-                  className="w-full justify-between border-accent/50 hover:bg-accent/10 text-accent rounded-full group"
-                >
-                  <div className="flex items-center gap-2">
-                    <MessageCircle className="h-4 w-4" />
-                    Live Chat Support
-                  </div>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </Button>
               </CardContent>
             </Card>
 

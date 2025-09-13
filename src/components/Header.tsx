@@ -22,7 +22,7 @@ export const Header = () => {
               className="h-20 w-auto object-contain" // big logo (80px tall)
             /> */}
 
-            <span className="text-xl font-bold glow-text">NeuraX</span>
+            <span className="text-xl font-bold glow-text"><a href="#">NeuraX</a></span>
           </div>
 
           {/* Desktop Navigation */}

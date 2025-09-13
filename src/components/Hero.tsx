@@ -60,7 +60,8 @@ export const Hero = () => {
               size="lg" 
               className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 group"
             >
-              Start Your AI Journey
+              <a href="#contact">Start Your AI Journey</a>
+              
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
             </Button>
             <Button 
@@ -68,7 +69,8 @@ export const Hero = () => {
               size="lg"
               className="border-primary/50 text-primary hover:bg-primary/10 hover:border-primary font-semibold px-8 py-3 rounded-full transition-all duration-300"
             >
-              View Our Work
+              
+              <a href="#case_studies">View Our Work</a>
             </Button>
           </div>
 

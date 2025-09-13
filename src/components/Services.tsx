@@ -1,11 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Eye, 
-  MessageSquare, 
-  Cpu, 
-  Database, 
-  Wifi, 
-  Shield 
+import {
+  Eye,
+  MessageSquare,
+  Cpu,
+  Database,
+  Wifi,
+  Shield
 } from "lucide-react";
 
 export const Services = () => {
@@ -13,39 +13,39 @@ export const Services = () => {
     {
       icon: Eye,
       title: "Computer Vision Systems",
-      description: "Quality control, surveillance, and automated inspection solutions",
+      description: "AI-powered quality control, surveillance, and automated inspection solutions that detect anomalies, enhance safety, and improve operational efficiency across industries.",
     },
     {
       icon: MessageSquare,
       title: "Custom LLM Solutions",
-      description: "Chatbots, document processing, and intelligent automation",
+      description: "Tailored large language model (LLM) applications such as chatbots, document processing, and intelligent automation designed to streamline workflows and boost customer engagement.",
     },
     {
       icon: Wifi,
       title: "IoT Integration",
-      description: "Smart factories, predictive maintenance, and connected systems",
+      description: "Seamlessly connect devices and systems to enable smart factories, predictive maintenance, and real-time monitoring for improved decision-making and operational transparency.",
     },
     {
       icon: Cpu,
       title: "AI Infrastructure",
-      description: "Scalable AI platforms and cloud-native solutions",
+      description: "Robust, scalable AI platforms and cloud-native solutions built to handle complex data pipelines, ensuring high performance, reliability, and future-proof AI adoption.",
     },
     {
       icon: Database,
       title: "Data Analytics",
-      description: "Advanced analytics and business intelligence solutions",
+      description: "Advanced data analytics and business intelligence services that transform raw data into actionable insights, helping businesses drive growth and informed decision-making.",
     },
     {
       icon: Shield,
       title: "AI Security",
-      description: "Secure AI implementations and compliance solutions",
+      description: "Comprehensive security frameworks for AI implementations, ensuring compliance, data privacy, and protection against vulnerabilities in critical AI-driven systems.",
     },
   ];
 
   return (
     <section id="services" className="relative py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -57,7 +57,7 @@ export const Services = () => {
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <Card
               key={index}

@@ -9,35 +9,35 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2 group">
-              <div className="relative p-2 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+              {/* <div className="relative p-2 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
                 <Brain className="h-6 w-6 text-primary animate-neural-pulse" />
                 <Zap className="absolute -top-1 -right-1 h-3 w-3 text-accent animate-glow" />
-              </div>
-              <span className="text-xl font-bold glow-text">NeuroTech AI</span>
+              </div> */}
+              <span className="text-xl font-bold glow-text">NeuraX</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Transforming businesses with cutting-edge AI solutions that drive 
+              Transforming businesses with cutting-edge AI solutions that drive
               innovation, efficiency, and competitive advantage.
             </p>
             <div className="flex space-x-3">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-2 rounded-lg bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-200"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a 
-                href="#" 
+              {/* <a
+                href="#"
                 className="p-2 rounded-lg bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-200"
               >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="p-2 rounded-lg bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-200"
               >
                 <Github className="h-4 w-4" />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -83,23 +83,13 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a href="#case_studies" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Case Studies
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                  Blog & Resources
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                  Privacy Policy
+                <a href="#vision" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                  Vision 25-26
                 </a>
               </li>
             </ul>
@@ -111,15 +101,15 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                hello@neurotechai.com
+                hello@neura-x.co
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="h-4 w-4 text-accent" />
-                +1 (555) 123-4567
+                +44 7459 625289
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
-                Silicon Valley, CA
+                London, UK
               </div>
             </div>
           </div>
@@ -129,7 +119,7 @@ export const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <div>
-              © 2024 NeuroTech AI. All rights reserved.
+              © 2025 NeuraX. All rights reserved.
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="hover:text-primary transition-colors duration-200">
