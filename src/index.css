@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  cursor: none; /* Hide system cursor */
+  cursor: none; 
 }
 
 
