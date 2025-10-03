@@ -37,6 +37,10 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/60 to-background/90"></div>
       </div>
 
+      {/* Side Lines */}
+      <div className="absolute left-8 md:left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent z-10"></div>
+      <div className="absolute right-8 md:right-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent z-10"></div>
+
       {/* Content */}
       <motion.div
         className="relative z-10 container mx-auto px-6 text-center"
