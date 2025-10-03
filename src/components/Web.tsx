@@ -22,7 +22,7 @@ export default function Header({
 
   useEffect(() => {
     const handleScroll = () => {
-      setSticky(window.scrollY >= 80);
+      setSticky(window.scrollY >= -1);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
