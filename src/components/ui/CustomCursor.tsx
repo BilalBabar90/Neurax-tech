@@ -16,7 +16,7 @@ export default function CursorDot() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-4 h-4 bg-blue-500 rounded-full pointer-events-none z-[9999]"
+      className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full pointer-events-none z-[9999]"
       animate={{ x: pos.x - 8, y: pos.y - 8 }}
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
     />
