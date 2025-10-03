@@ -37,7 +37,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative py-24 bg-gradient-to-b from-muted/20 to-background"
+      className="relative bg-gradient-to-b from-muted/20 to-background"
     >
       <ParticleBackground className="opacity-20" density="low" />
 
@@ -189,7 +189,6 @@ export const About = () => {
         </h2>
       </motion.div>
 
-      {/* Benefits Grid */}
       <motion.div
         className="container mx-auto px-6"
         variants={container}
@@ -197,7 +196,8 @@ export const About = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        {/* Grid wrapper for 3 per row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
               icon: Filter,
@@ -229,12 +229,8 @@ export const About = () => {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {benefit.desc}
-                    </p>
+                    <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -242,6 +238,7 @@ export const About = () => {
           ))}
         </div>
       </motion.div>
+
     </section>
   );
 };
