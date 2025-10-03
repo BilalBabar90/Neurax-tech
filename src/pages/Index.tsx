@@ -6,14 +6,17 @@ import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import Vision from "@/components/Vision";
+import Web from "@/components/Web";
+
 
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* <Header /> */}
       <main>
-        <Hero />
+        {/* <Hero /> */}
+        <Web />
         <Services />
         <About />
         <Vision />
