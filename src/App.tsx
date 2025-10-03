@@ -17,7 +17,7 @@ const App = () => {
     // Show loader for 2 seconds (you can adjust this)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);

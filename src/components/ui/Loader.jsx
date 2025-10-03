@@ -19,13 +19,13 @@ const greetings = [
 const Loader = () => {
   const [index, setIndex] = useState(0);
 
-  // Cycle every 500ms
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % greetings.length);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
+  // // Cycle every 500ms
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % greetings.length);
+  //   }, 500);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className="flex items-center justify-center h-screen w-screen" style={{marginTop : "190px"}}>
@@ -38,7 +38,7 @@ const Loader = () => {
           exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
-          {greetings[index]}
+          Hello...
         </motion.h1>
       </AnimatePresence>
     </div>
