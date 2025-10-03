@@ -6,7 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Loader from "./components/ui/Loader"; // ✅ Import Loader
+import Loader from "./components/ui/Loader";
+import CursorDot from "./components/ui/CustomCursor"; // ✅ Import CursorDot
 
 const queryClient = new QueryClient();
 
@@ -14,16 +15,14 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show loader for 2 seconds (you can adjust this)
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1000);
-
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <Loader />; // ✅ Show loader first
+    return <Loader />;
   }
 
   return (
@@ -32,6 +31,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <CursorDot /> {/* ✅ Add dot cursor here */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
