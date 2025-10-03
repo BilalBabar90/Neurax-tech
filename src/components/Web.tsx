@@ -23,7 +23,7 @@ const navItems = [
 ];
 
 export default function Header({
-  logoText = "WEBYANSH",
+  logoText = "Neura X",
   ctaText = "Book a call",
   ctaHref = "/contact",
 }) {
