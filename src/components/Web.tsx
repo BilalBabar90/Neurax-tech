@@ -40,14 +40,15 @@ export default function Header({
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 w-full flex items-center justify-center">
+    <header className="fixed top-0 z-50 w-full flex items-center justify-center bg-grid">
       <div className="container flex items-center justify-center mx-auto p-3">
         <nav
-          className={`flex items-center justify-center flex-col transition-all duration-300 ${
-            sticky
-              ? "mx-4 rounded-xl shadow-lg bg-white/90 backdrop-blur-md md:w-fit w-[85%]"
+          className={`flex items-center justify-center flex-col transition-all duration-300
+            mx-4  // ✅ margin always applied
+            ${sticky
+              ? "rounded-xl shadow-lg bg-white/90 backdrop-blur-md md:w-fit w-[85%]"
               : "w-full"
-          }`}
+            }`}
         >
           {/* Row */}
           <motion.div
