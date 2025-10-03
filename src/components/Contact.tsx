@@ -2,15 +2,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Send, 
-  MessageCircle, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  MessageCircle,
   Calendar,
-  ArrowRight 
+  ArrowRight
 } from "lucide-react";
 
 export const Contact = () => {
@@ -23,7 +23,7 @@ export const Contact = () => {
             Let's Build the <span className="glow-text">Future Together</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Ready to transform your business with AI? Get in touch for a free consultation 
+            Ready to transform your business with AI? Get in touch for a free consultation
             and discover how our enterprise solutions can drive your success.
           </p>
         </div>
@@ -44,32 +44,32 @@ export const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Name</label>
-                  <Input 
-                    placeholder="Your full name" 
+                  <Input
+                    placeholder="Your full name"
                     className="bg-muted/50 border-border focus:border-primary transition-colors duration-200"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Email</label>
-                  <Input 
-                    type="email" 
-                    placeholder="your@email.com" 
+                  <Input
+                    type="email"
+                    placeholder="your@email.com"
                     className="bg-muted/50 border-border focus:border-primary transition-colors duration-200"
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Company (Optional)</label>
-                <Input 
-                  placeholder="Your company name" 
+                <Input
+                  placeholder="Your company name"
                   className="bg-muted/50 border-border focus:border-primary transition-colors duration-200"
                 />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Message</label>
-                <Textarea 
+                <Textarea
                   placeholder="Tell us about your project requirements and business goals..."
                   rows={4}
                   className="bg-muted/50 border-border focus:border-primary transition-colors duration-200"
@@ -97,7 +97,13 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Email</div>
-                    <div className="text-sm text-muted-foreground">hello@neura-x.co</div>
+                    <a
+                      href="mailto:hello@neura-x.co"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-primary transition"
+                    >
+                      {/* <Mail className="h-4 w-4 text-primary" /> */}
+                      hello@neura-x.co
+                    </a>
                   </div>
                 </div>
 
@@ -107,7 +113,15 @@ export const Contact = () => {
                   </div>
                   <div>
                     <div className="font-medium text-foreground">Phone</div>
-                    <div className="text-sm text-muted-foreground">+44 7459 625289</div>
+                    <a
+                      href="https://wa.me/447459625289"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground hover:text-accent transition"
+                    >
+                      {/* <Phone className="h-4 w-4 text-accent" /> */}
+                      +44 7459 625289
+                    </a>
                   </div>
                 </div>
 

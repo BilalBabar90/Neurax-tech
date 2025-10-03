@@ -17,7 +17,7 @@ export default function Header({
   ctaHref = "#contact", // ✅ points to section
 }) {
   const [open, setOpen] = useState(false);
-  const [sticky, setSticky] = useState(false);
+  const [sticky, setSticky] = useState(true);
   const [dropdown, setDropdown] = useState(null);
 
   useEffect(() => {

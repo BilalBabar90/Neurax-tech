@@ -21,7 +21,7 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/neura-xco/"
                 className="p-2 rounded-lg bg-muted/50 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-200"
               >
                 <Linkedin className="h-4 w-4" />
@@ -46,27 +46,27 @@ export const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Computer Vision Solutions
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   LLM Development
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Robotics & IoT Integration
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   AI Infrastructure
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Enterprise AI Consulting
                 </a>
               </li>
@@ -99,20 +99,34 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
+              {/* Email */}
+              <a
+                href="mailto:hello@neura-x.co"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition"
+              >
                 <Mail className="h-4 w-4 text-primary" />
                 hello@neura-x.co
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              </a>
+
+              {/* Phone (WhatsApp) */}
+              <a
+                href="https://wa.me/447459625289"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-accent transition"
+              >
                 <Phone className="h-4 w-4 text-accent" />
                 +44 7459 625289
-              </div>
+              </a>
+
+              {/* Address */}
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
                 London, UK
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Bottom Bar */}
@@ -122,13 +136,13 @@ export const Footer = () => {
               © 2025 NeuraX. All rights reserved.
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-primary transition-colors duration-200">
+              <a className="hover:text-primary transition-colors duration-200">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-primary transition-colors duration-200">
+              <a className="hover:text-primary transition-colors duration-200">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-primary transition-colors duration-200">
+              <a className="hover:text-primary transition-colors duration-200">
                 Cookie Policy
               </a>
             </div>
