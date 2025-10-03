@@ -23,7 +23,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden neural-grid-enhanced">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden neural-grid-enhanced " style={{marginTop : "140px"}}>
       {/* Particle Background */}
       <ParticleBackground density="high" />
 
@@ -31,7 +31,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={""}
-          alt="AI Neural Networks and Technology"
+          // alt="AI Neural Networks and Technology"
           className="w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/60 to-background/90"></div>
