@@ -72,6 +72,7 @@ export const Services = () => {
       id="services"
       className="relative py-20 bg-gradient-to-b from-background to-muted/20"
     >
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
