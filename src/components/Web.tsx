@@ -1,31 +1,20 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom"; // ✅ Use React Router instead of next/link
+import { HashLink } from "react-router-hash-link"; // ✅ Smooth scroll
 
 const navItems = [
-  {
-    name: "Services",
-    href: "#",
-    sub: ["Web Design", "Webflow Development", "SEO"],
-  },
-  {
-    name: "Industries",
-    href: "#",
-    sub: ["Startups", "E-commerce", "SaaS"],
-  },
-  { name: "Portfolio", href: "/portfolio" },
-  {
-    name: "Resources",
-    href: "#",
-    sub: ["Blog", "Case Studies", "Guides"],
-  },
+  { name: "Services", href: "#services" },
+  { name: "About", href: "#about" },
+  { name: "Vision 25-26", href: "#vision" },
+  { name: "Case Studies", href: "#case_studies" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Header({
   logoText = "Neura X",
   ctaText = "Book a call",
-  ctaHref = "/contact",
+  ctaHref = "#contact", // ✅ points to section
 }) {
   const [open, setOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -44,10 +33,11 @@ export default function Header({
       <div className="container flex items-center justify-center mx-auto p-3">
         <nav
           className={`flex items-center justify-center flex-col transition-all duration-300
-            mx-4  // ✅ margin always applied
-            ${sticky
-              ? "rounded-xl shadow-lg bg-white/90 backdrop-blur-md md:w-fit w-[85%]"
-              : "w-full"
+            mx-4
+            ${
+              sticky
+                ? "rounded-xl shadow-lg bg-white/90 backdrop-blur-md md:w-fit w-[85%]"
+                : "w-full"
             }`}
         >
           {/* Row */}
@@ -62,67 +52,36 @@ export default function Header({
           >
             {/* Logo */}
             <motion.div layout>
-              <Link to="/" className="flex items-center gap-2 shrink-0">
+              <HashLink smooth to="#" className="flex items-center gap-2 shrink-0">
                 <span className="text-orange-500 text-2xl font-bold">
                   {logoText}
                 </span>
-              </Link>
+              </HashLink>
             </motion.div>
 
             {/* Desktop Nav */}
-            <motion.nav
-              className="hidden md:flex gap-6 items-center relative"
-              layout
-            >
+            <motion.nav className="hidden md:flex gap-6 items-center relative" layout>
               {navItems.map((item) => (
-                <div
+                <HashLink
                   key={item.name}
-                  className="relative group"
-                  onMouseEnter={() => setDropdown(item.name)}
-                  onMouseLeave={() => setDropdown(null)}
+                  smooth
+                  to={item.href}
+                  className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-orange-500 flex items-center gap-1"
                 >
-                  <Link
-                    to={item.href}
-                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-orange-500 flex items-center gap-1"
-                  >
-                    {item.name}
-                    {item.sub && <ChevronDown size={14} />}
-                  </Link>
-
-                  {/* Dropdown */}
-                  <AnimatePresence>
-                    {item.sub && dropdown === item.name && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-10 left-0 bg-white shadow-lg rounded-md w-40 py-2 z-40"
-                      >
-                        {item.sub.map((subItem, idx) => (
-                          <Link
-                            key={idx}
-                            to="#"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            {subItem}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                  {item.name}
+                </HashLink>
               ))}
             </motion.nav>
 
             {/* CTA */}
             <motion.div className="hidden md:flex items-center" layout>
-              <Link
+              <HashLink
+                smooth
                 to={ctaHref}
                 className="inline-flex items-center gap-2 text-sm px-6 py-3 rounded-full text-white bg-orange-500 hover:bg-orange-600 transition"
               >
                 {ctaText}
-              </Link>
+              </HashLink>
             </motion.div>
 
             {/* Mobile Toggle */}
@@ -131,10 +90,7 @@ export default function Header({
               className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
               onClick={() => setOpen((o) => !o)}
             >
-              <motion.div
-                animate={{ rotate: open ? 90 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
+              <motion.div animate={{ rotate: open ? 90 : 0 }} transition={{ duration: 0.2 }}>
                 {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </motion.div>
             </button>
@@ -161,53 +117,26 @@ export default function Header({
                   <div className="max-w-[1200px] mx-auto px-6 py-4">
                     <div className="flex flex-col gap-2 mb-4">
                       {navItems.map((item) => (
-                        <div key={item.name}>
-                          <div
-                            className="flex items-center justify-between cursor-pointer px-3 py-2 text-base font-medium hover:bg-gray-100 rounded-lg"
-                            onClick={() =>
-                              setDropdown(
-                                dropdown === item.name ? null : item.name
-                              )
-                            }
-                          >
-                            {item.name}
-                            {item.sub && <ChevronDown size={16} />}
-                          </div>
-
-                          {/* Mobile Dropdown */}
-                          <AnimatePresence>
-                            {item.sub && dropdown === item.name && (
-                              <motion.div
-                                initial={{ opacity: 0, y: -5 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -5 }}
-                                transition={{ duration: 0.2 }}
-                                className="ml-6 mt-2 space-y-2"
-                              >
-                                {item.sub.map((subItem, idx) => (
-                                  <Link
-                                    key={idx}
-                                    to="#"
-                                    className="block text-sm text-gray-600 hover:text-orange-500"
-                                    onClick={() => setOpen(false)}
-                                  >
-                                    {subItem}
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
+                        <HashLink
+                          key={item.name}
+                          smooth
+                          to={item.href}
+                          onClick={() => setOpen(false)}
+                          className="block px-3 py-2 text-base font-medium hover:bg-gray-100 rounded-lg"
+                        >
+                          {item.name}
+                        </HashLink>
                       ))}
                     </div>
                     <div>
-                      <Link
+                      <HashLink
+                        smooth
                         to={ctaHref}
                         onClick={() => setOpen(false)}
                         className="w-full inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full font-semibold text-white bg-orange-500 hover:bg-orange-600 transition"
                       >
                         {ctaText}
-                      </Link>
+                      </HashLink>
                     </div>
                   </div>
                 </motion.div>
