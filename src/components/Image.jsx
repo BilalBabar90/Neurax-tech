@@ -24,12 +24,12 @@ const ImageCarouselMarquee = () => {
   return (
     <div className="w-full overflow-hidden pt-10">
       {/* ✅ Only 3 images visible at a time using width control */}
-      <marquee behavior="scroll" direction="left" scrollamount="18">
+      <marquee behavior="scroll" direction="left" scrollamount="12">
         <div className="flex w-max">
           {images.map((src, index) => (
             <div
               key={index}
-              className="w-[33.33vw] px-3"
+              className="w-[45.33vw] px-3"
             >
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img

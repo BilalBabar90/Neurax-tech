@@ -16,6 +16,10 @@ import {
   ActivitySquare
 } from "lucide-react";
 
+import Image2 from "../images/2.jpg";
+import Image3 from "../images/3.jpg";
+import Image4 from "../images/4.jpg";
+
 export const Projects = () => {
   const caseStudies = [
     {
@@ -145,7 +149,7 @@ export const Projects = () => {
           {caseStudies.map((study, index) => (
             <Card
               key={index}
-              className="service-card group p-6 h-full max-w-2xl mx-auto"
+              className="service-card group p-6 h-full max-w-3xl mx-auto"
             >
               <CardHeader>
                 <div className="flex items-start justify-between mb-4">
@@ -182,7 +186,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Key Features */}
-                <div>
+                {/* <div>
                   <span className="text-sm font-medium text-foreground mb-3 block">Key Features:</span>
                   <div className="grid gap-2">
                     {study.keyFeatures.map((feature, featureIndex) => (
@@ -192,7 +196,7 @@ export const Projects = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Technologies */}
                 <div>
@@ -207,7 +211,7 @@ export const Projects = () => {
                 </div>
 
                 {/* Benefits */}
-                <div>
+                {/* <div>
                   <span className="text-sm font-medium text-foreground mb-2 block">Key Benefits:</span>
                   <div className="grid gap-1">
                     {study.benefits.map((benefit, benefitIndex) => (
@@ -217,10 +221,10 @@ export const Projects = () => {
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Results */}
-                <div className={`p-4 rounded-lg ${study.color === 'primary' ? 'bg-primary/5' : 'bg-accent/5'
+                {/* <div className={`p-4 rounded-lg ${study.color === 'primary' ? 'bg-primary/5' : 'bg-accent/5'
                   } border-l-4 ${study.color === 'primary' ? 'border-primary' : 'border-accent'
                   }`}>
                   <div className="text-sm text-muted-foreground">Key Results:</div>
@@ -228,11 +232,11 @@ export const Projects = () => {
                     }`}>
                     {study.results}
                   </div>
-                </div>
+                </div> */}
 
                 {/* Action Buttons - Simplified */}
                 <div className="flex gap-3 pt-2">
-                  <button
+                  {/* <button
                     onClick={() => handleDownload(study.pdfPath, study.title)}
                     className={`flex-1 px-4 py-2 rounded-full font-semibold text-white transition-all duration-200 hover:opacity-90 ${study.color === 'primary'
                       ? 'bg-gradient-to-r from-primary to-accent'
@@ -242,7 +246,7 @@ export const Projects = () => {
                   >
                     <Download className="inline mr-2 h-4 w-4" />
                     Download Case Study
-                  </button>
+                  </button> */}
                   <button
                     onClick={() => handlePreview(study.pdfPath)}
                     className={`px-4 py-2 rounded-full font-semibold border transition-all duration-200 hover:opacity-90 ${study.color === 'primary'
