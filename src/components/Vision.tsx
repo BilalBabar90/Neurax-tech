@@ -115,15 +115,16 @@ export default function VisionSections() {
           <SectionCharts sectionId={activeSection} />
 
           {/* Action Buttons */}
-          <div className="flex gap-3 pt-2">
-            <button
-              onClick={() => handlePreview(activeData?.pdfPath!)}
-              className="px-4 py-2 rounded-full font-semibold border transition-all duration-200 hover:opacity-90 border-primary/50 text-primary hover:bg-primary/10"
-            >
-              <ExternalLink className="inline mr-2 h-4 w-4" />
-              Preview
-            </button>
-          </div>
+  <div className="pt-2 flex justify-center">
+  <button
+    onClick={() => handlePreview(activeData?.pdfPath!)}
+    className="px-4 py-2 rounded-full font-semibold border transition-all duration-200 hover:opacity-90 border-primary/50 text-primary hover:bg-primary/10"
+  >
+    <ExternalLink className="inline mr-2 h-4 w-4" />
+    Preview
+  </button>
+</div>
+
         </motion.div>
       </div>
 
