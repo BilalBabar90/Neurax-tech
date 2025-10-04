@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image1 from "../../images/1.jpg";
+import Image1 from "../../images/8.jpg";
 import {
     Download,
     Shield,

@@ -22,26 +22,26 @@ const ImageCarouselMarquee = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden pt-10">
-      {/* ✅ Only 3 images visible at a time using width control */}
-      <marquee behavior="scroll" direction="left" scrollamount="12">
-        <div className="flex w-max">
-          {images.map((src, index) => (
-            <div
-              key={index}
-              className="w-[45.33vw] px-3"
-            >
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img
-                  src={src}
-                  alt={`Slide ${index}`}
-                  className="w-full h-64 object-cover"
-                />
-              </div>
+    <div className="w-full overflow-hidden py-10 bg-background relative">
+      <div className="flex w-max animate-scroll">
+        {/* ✅ Duplicate images for seamless infinite loop */}
+        {[...images, ...images].map((src, index) => (
+          <div
+            key={index}
+            className="w-[30vw] md:w-[20vw] lg:w-[15vw] px-3"
+          >
+            <div className="rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+              <img
+                src={src}
+                alt={`Slide ${index}`}
+                className=" object-cover"
+
+                style={{width : "600px" , height : "400px"}}
+              />
             </div>
-          ))}
-        </div>
-      </marquee>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

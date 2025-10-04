@@ -298,9 +298,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Shield } from "lucide-react";
-import Image2 from "../images/2.jpg";
-import Image3 from "../images/3.jpg";
-import Image4 from "../images/4.jpg";
+import Image2 from "../images/5.jpg";
+import Image3 from "../images/1.jpg";
+import Image4 from "../images/9.png";
 
 export const Projects = () => {
   const caseStudies = [
