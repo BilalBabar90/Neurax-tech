@@ -8,6 +8,7 @@ body {
 
 
 @layer base {
+  
   :root {
     --background: 0 0% 100%; /* White */
     --foreground: 0 0% 10%; /* Almost black text */
@@ -99,3 +100,6 @@ body {
     --sidebar-ring: 18 90% 60%;
   }
 }
+
+
+
