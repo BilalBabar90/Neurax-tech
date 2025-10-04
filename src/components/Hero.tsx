@@ -50,7 +50,7 @@ export const Hero = () => {
       >
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             variants={item}
             className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
           >
@@ -58,7 +58,7 @@ export const Hero = () => {
             <span className="text-sm font-medium text-primary">
               Leading AI Innovation
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main Heading */}
           <motion.h1

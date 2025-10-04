@@ -8,7 +8,7 @@ import { Footer } from "@/components/Footer";
 import Vision from "@/components/Vision";
 import Web from "@/components/Web";
 import Image from "@/components/Image"
-
+import Case from "@/components/Case"
 
 
 const Index = () => {
@@ -23,6 +23,7 @@ const Index = () => {
         <About />
         <Vision />
         <Projects />
+        <Case />
         <Contact />
       </main>
       <Footer />
