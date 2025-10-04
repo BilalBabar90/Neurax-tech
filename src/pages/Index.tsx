@@ -7,6 +7,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import Vision from "@/components/Vision";
 import Web from "@/components/Web";
+import Image from "@/components/Image"
 
 
 
@@ -17,6 +18,7 @@ const Index = () => {
       <main>
         <Hero />
         <Web />
+        <Image />
         <Services />
         <About />
         <Vision />
