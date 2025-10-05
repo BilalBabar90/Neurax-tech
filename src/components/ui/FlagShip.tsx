@@ -1,8 +1,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image1 from "../../images/8.jpg";
-import Image1 from "../../images/6.jpg";
-import Image1 from "../../images/7.jpg";
+import Image2 from "../../images/6.jpg";
+import Image3 from "../../images/7.jpg";
 import {
     Download,
     Shield,
@@ -32,6 +32,7 @@ export const FlagShip = () => {
                 "Lightweight encoder-decoder architecture",
                 "Cloud and edge deployment capabilities",
             ],
+            image: Image1,
             benefits: [
                 "Early detection of retinal and systemic diseases",
                 "Affordable AI solution for low-resource healthcare settings",
@@ -42,7 +43,7 @@ export const FlagShip = () => {
 
         {
             title: "Eye-AD",
-            subtitle: "Eye-AD: A Trustworthy AI Platform for Early Dementia Detection Through Retinal Imaging",
+            subtitle: "A Trustworthy AI Platform for Early Dementia Detection Through Retinal Imaging",
             description:
                 "Eye-AD is a groundbreaking AI-powered platform designed for early dementia detection through retinal imaging. By analyzing retinal microvasculature using Optical Coherence Tomography Angiography (OCTA), it provides a rapid, non-invasive, and affordable diagnostic alternative to traditional MRI and spinal tap procedures.",
             category: "Medical Imaging AI",
@@ -66,18 +67,18 @@ export const FlagShip = () => {
                 "First large-scale OCTA-based AI solution for early dementia detection",
                 "Affordable and non-invasive diagnostic approach"
             ],
+            image: Image2,
             benefits: [
                 "Enables early and accessible dementia screening",
                 "Reduces diagnostic costs significantly",
                 "Provides interpretable results aligned with clinical biomarkers",
                 "Supports rapid deployment in primary care and community health settings",
-                "Facilitates global validation and regulatory readiness (FDA/CE)"
             ],
         },
 
         {
             title: "Swin-UMamba",
-            subtitle: "Swin-UMamba: A Universal Foundation Model for Medical Image Analysis",
+            subtitle: "A Universal Foundation Model for Medical Image Analysis",
             description:
                 "Swin-UMamba is a next-generation AI foundation model designed to revolutionize medical image analysis. By leveraging the powerful Mamba architecture and a novel self-supervised adaptation scheme, it enables precise, efficient, and universally adaptable image segmentation across diverse medical domains—from organs to cells—while maintaining minimal computational requirements.",
             category: "Medical Imaging AI",
@@ -94,7 +95,7 @@ export const FlagShip = () => {
             results:
                 "Achieved state-of-the-art segmentation accuracy across radiology, endoscopy, and microscopy datasets while reducing computational cost and data labeling requirements by over 60%.",
             color: "primary",
-            pdfPath: "/Swin-mamba-proposal.pdf",
+            pdfPath: "/Swin mamba proposal.pdf",
             keyFeatures: [
                 "Universal and adaptable medical image foundation model",
                 "Self-supervised adaptation from natural to medical image domains",
@@ -102,12 +103,12 @@ export const FlagShip = () => {
                 "Supports diverse segmentation tasks (organ, tissue, cell-level)",
                 "Cloud-based API for seamless hospital integration"
             ],
+            image: Image3,
             benefits: [
                 "Accelerates deployment of AI in medical imaging worldwide",
                 "Reduces the need for large labeled datasets",
                 "Delivers high accuracy on low-resource clinical settings",
                 "Enables regulatory-ready applications (FDA/CE process initiated)",
-                "Strengthens partnerships with global medical and telemedicine leaders"
             ],
         }
 
@@ -151,7 +152,7 @@ export const FlagShip = () => {
                             {/* Image Section (Left Half) */}
                             <div className="lg:w-1/2 w-full h-64 lg:h-auto relative overflow-hidden">
                                 <img
-                                    src={Image1}
+                                       src={study.image}
                                     alt={study.title}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                 />
