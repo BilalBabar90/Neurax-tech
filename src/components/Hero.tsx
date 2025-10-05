@@ -112,7 +112,7 @@ export const Hero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-2xl mx-auto"
           >
             {[
-              { value: "500+", label: "AI Projects", color: "text-primary" },
+              { value: "50+", label: "AI Projects", color: "text-primary" },
               { value: "15+", label: "Industries", color: "text-accent" },
               { value: "200%", label: "Avg ROI", color: "text-primary" },
               { value: "99%", label: "Client Success", color: "text-accent" },

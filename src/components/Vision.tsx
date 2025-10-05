@@ -41,7 +41,8 @@ export default function VisionSections() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="glow-text">Vision 2025-2026</span>
           </h2>
-          <p className="text-xl text-muted-foreground">These are the projects that will reshape the business and drive meaningful growth.
+          <p className="text-xl text-muted-foreground">
+            These are the projects proposed by nuera-x for year 25-26.
           </p>
         </div>
       </div>

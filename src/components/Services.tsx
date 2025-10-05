@@ -8,64 +8,59 @@ import {
   Database,
   Wifi,
   Shield,
+  BrainCircuit,
+  Workflow,
+  LineChart,
+  ScanSearch,
+  Layers
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Services = () => {
-  const services = [
-    {
-      icon: Eye,
-      title: "UI/UX Design",
-      description:
-        "Our expert Webflow design team create stunning, user-centered websites that drive conversions through strategic UI/UX design, ensuring your brand stands out.",
-      tags: ["Web Design", "UX Research", "Figma Design"],
-    },
-    {
-      icon: MessageSquare,
-      title: "Webflow Development",
-      description:
-        "Transform your vision into reality with our expert Webflow development services. Our certified developers create responsive, scalable websites that perform.",
-      tags: ["Webflow Design", "Webflow Experts"],
-    },
-    {
-      icon: Cpu,
-      title: "Webflow SEO",
-      description:
-        "Boost your online visibility with our comprehensive Webflow SEO services, ensuring your website ranks and performs. Rank higher and grow faster with our expert SEO services.",
-      tags: ["Webflow SEO", "Link Building", "Global SEO"],
-    },
-    {
-      icon: Shield,
-      title: "Growth Marketing",
-      description:
-        "Turn your Webflow website into a lead generating engine. We combine UX with data to boost conversions, maximize ROI, & grow your brand.",
-      tags: [
-        "A/B & Multivariate Testing",
-        "Funnels",
-        "Heatmaps",
-        "Landing Page Optimization",
-      ],
-    },
-    {
-      icon: Wifi,
-      title: "Webflow Migration",
-      description:
-        "Smooth transitions guaranteed. Migrations from WordPress to Webflow, Squarespace to Webflow, and Wix to Webflow are our specialties.",
-      tags: [
-        "Migrate to Webflow",
-        "Wix to Webflow",
-        "WordPress to Webflow",
-        "Figma to Webflow",
-      ],
-    },
-    {
-      icon: Database,
-      title: "Webflow Maintenance and Support",
-      description:
-        "We provide post launch updates, performance checks, and troubleshooting to keep your Webflow site secure and optimized.",
-      tags: ["Webflow Maintenance", "Webflow Support", "24/7 Support", "Ongoing Support"],
-    },
-  ];
+const services = [
+  {
+    icon: BrainCircuit,
+    title: "AI-Powered Virtual Agents & Assistants",
+    description:
+      "Autonomous AI agents that streamline customer support, manage workflow..",
+    tags: ["Chatbots", "Process Automation", "NLP Agents"],
+  },
+  {
+    icon: Layers,
+    title: "Generative AI Solutions",
+    description:
+      "Tailored GPT-like models that create high-quality text, images, videos, or audio for industries such as marketing.",
+    tags: ["GPT Models", "Content Generation", "Multimodal AI"],
+  },
+  {
+    icon: Workflow,
+    title: "AI Workflow Automation",
+    description:
+      "Intelligent systems that automate repetitive tasks like scheduling, reporting, and data processing across business operations.",
+    tags: ["Automation", "Task Management", "AI Integration"],
+  },
+  {
+    icon: LineChart,
+    title: "Predictive Analytics & Decision Intelligence",
+    description:
+      "Data-driven forecasting models that evaluate trends, performance, and risks to improve strategic decision-making.",
+    tags: ["Forecasting", "Business Intelligence", "Risk Analysis"],
+  },
+  {
+    icon: ScanSearch,
+    title: "Medical Imaging & Diagnostics AI",
+    description:
+      "Deep learning tools that analyze MRIs, CT scans, and X-rays to detect tumors, fractures, and support clinical diagnosis.",
+    tags: ["Healthcare AI", "Diagnostics", "Imaging Analysis"],
+  },
+  {
+    icon: Cpu,
+    title: "AI Integration & Customization Services",
+    description:
+      "Custom AI implementations that embed intelligence into CRMs, ERPs, and cloud systems to enhance productivity and scalability.",
+    tags: ["Enterprise AI", "Custom Solutions", "System Integration"],
+  },
+];
 
   return (
     <section
