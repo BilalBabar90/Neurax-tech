@@ -1,12 +1,15 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image1 from "../../images/8.jpg";
+import Image1 from "../../images/6.jpg";
+import Image1 from "../../images/7.jpg";
 import {
     Download,
     Shield,
     Zap,
     ExternalLink,
     Eye,
+    BrainCircuit
 } from "lucide-react";
 
 export const FlagShip = () => {
@@ -36,6 +39,78 @@ export const FlagShip = () => {
                 "Secure and compliant with healthcare data regulations",
             ],
         },
+
+        {
+            title: "Eye-AD",
+            subtitle: "Eye-AD: A Trustworthy AI Platform for Early Dementia Detection Through Retinal Imaging",
+            description:
+                "Eye-AD is a groundbreaking AI-powered platform designed for early dementia detection through retinal imaging. By analyzing retinal microvasculature using Optical Coherence Tomography Angiography (OCTA), it provides a rapid, non-invasive, and affordable diagnostic alternative to traditional MRI and spinal tap procedures.",
+            category: "Medical Imaging AI",
+            industry: "Healthcare",
+            icon: Eye,
+            tech: [
+                "Graph Neural Networks",
+                "OCTA Imaging",
+                "Deep Learning",
+                "Python",
+                "PyTorch",
+                "Explainable AI (XAI)"
+            ],
+            results:
+                "Achieved AUC scores of 0.9355 for Early-Onset Alzheimer’s Disease and 0.8630 for Mild Cognitive Impairment using a multilevel graph-based deep learning model.",
+            color: "secondary",
+            pdfPath: "/Eye-AD-Dimensia-Proposal.pdf",
+            keyFeatures: [
+                "Interpretable graph-based deep learning framework",
+                "Analysis of intra- and inter-instance relationships across multiple retinal layers (SVC, DVC, CC)",
+                "First large-scale OCTA-based AI solution for early dementia detection",
+                "Affordable and non-invasive diagnostic approach"
+            ],
+            benefits: [
+                "Enables early and accessible dementia screening",
+                "Reduces diagnostic costs significantly",
+                "Provides interpretable results aligned with clinical biomarkers",
+                "Supports rapid deployment in primary care and community health settings",
+                "Facilitates global validation and regulatory readiness (FDA/CE)"
+            ],
+        },
+
+        {
+            title: "Swin-UMamba",
+            subtitle: "Swin-UMamba: A Universal Foundation Model for Medical Image Analysis",
+            description:
+                "Swin-UMamba is a next-generation AI foundation model designed to revolutionize medical image analysis. By leveraging the powerful Mamba architecture and a novel self-supervised adaptation scheme, it enables precise, efficient, and universally adaptable image segmentation across diverse medical domains—from organs to cells—while maintaining minimal computational requirements.",
+            category: "Medical Imaging AI",
+            industry: "Healthcare",
+            icon: BrainCircuit, // example icon; replace with your chosen one
+            tech: [
+                "Mamba Architecture",
+                "Swin Transformer",
+                "Self-Supervised Learning",
+                "Foundation Models",
+                "PyTorch",
+                "Medical Image Segmentation"
+            ],
+            results:
+                "Achieved state-of-the-art segmentation accuracy across radiology, endoscopy, and microscopy datasets while reducing computational cost and data labeling requirements by over 60%.",
+            color: "primary",
+            pdfPath: "/Swin-mamba-proposal.pdf",
+            keyFeatures: [
+                "Universal and adaptable medical image foundation model",
+                "Self-supervised adaptation from natural to medical image domains",
+                "High efficiency with reduced computational and data demands",
+                "Supports diverse segmentation tasks (organ, tissue, cell-level)",
+                "Cloud-based API for seamless hospital integration"
+            ],
+            benefits: [
+                "Accelerates deployment of AI in medical imaging worldwide",
+                "Reduces the need for large labeled datasets",
+                "Delivers high accuracy on low-resource clinical settings",
+                "Enables regulatory-ready applications (FDA/CE process initiated)",
+                "Strengthens partnerships with global medical and telemedicine leaders"
+            ],
+        }
+
     ];
 
     const handleDownload = (pdfPath, title) => {
