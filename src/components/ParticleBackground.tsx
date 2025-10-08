@@ -1,90 +1,69 @@
-import { useEffect, useRef, useState } from 'react';
-import particlesConfig from '../config/particles.json';
+"use client";
+import React from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
-declare global {
-  interface Window {
-    particlesJS: any;
-  }
-}
-
-interface ParticleBackgroundProps {
-  className?: string;
-  density?: 'low' | 'medium' | 'high';
-}
-
-export const ParticleBackground = ({ className = '', density = 'medium' }: ParticleBackgroundProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadParticles = () => {
-      if (typeof window !== 'undefined' && containerRef.current && !isLoaded) {
-        try {
-          // Check if particlesJS is available globally
-          if (typeof window.particlesJS === 'undefined') {
-            console.error('particles.js not available globally');
-            return;
-          }
-          
-          // Adjust particle density based on screen size and prop
-          const adjustedConfig = { ...particlesConfig };
-          const isMobile = window.innerWidth < 768;
-          
-          if (isMobile) {
-            adjustedConfig.particles.number.value = density === 'high' ? 40 : density === 'medium' ? 30 : 20;
-            adjustedConfig.particles.number.density.value_area = 1200;
-          } else {
-            adjustedConfig.particles.number.value = density === 'high' ? 100 : density === 'medium' ? 80 : 60;
-            adjustedConfig.particles.number.density.value_area = 1000;
-          }
-          
-          // Initialize particles
-          window.particlesJS.load('particles-container', adjustedConfig, () => {
-            console.log('Particles loaded successfully');
-            setIsLoaded(true);
-          });
-        } catch (error) {
-          console.error('Error loading particles:', error);
-        }
-      }
-    };
-
-    // Load particles.js script if not already loaded
-    const loadScript = () => {
-      if (typeof window.particlesJS === 'undefined') {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
-        script.onload = () => {
-          loadParticles();
-        };
-        script.onerror = () => {
-          console.error('Failed to load particles.js from CDN');
-        };
-        document.head.appendChild(script);
-      } else {
-        loadParticles();
-      }
-    };
-
-    loadScript();
-
-    // Handle resize
-    const handleResize = () => {
-      if (isLoaded) {
-        window.particlesJS && window.particlesJS.pJSDom && window.particlesJS.pJSDom[0] && window.particlesJS.pJSDom[0].pJS.fn.particlesRefresh();
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isLoaded, density]);
+export const ParticleBackground = () => {
+  const particlesInit = async (engine: any) => {
+    await loadSlim(engine);
+  };
 
   return (
-    <div 
-      id="particles-container" 
-      ref={containerRef}
-      className={`absolute inset-0 w-full h-full ${className}`}
-      style={{ zIndex: 1 }}
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        fullScreen: { enable: false },
+        background: {
+          color: { value: "#ffffff" }, // ⚪ White background
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse", // Flowing reaction to cursor
+            },
+          },
+          modes: {
+            repulse: {
+              distance: 120,
+              duration: 0.3,
+            },
+          },
+        },
+        particles: {
+          number: {
+            value: 200, // More particles for density
+            density: { enable: true, area: 800 },
+          },
+          color: { value: "#F7690E" }, // 🟠 Orange particles
+          links: {
+            enable: true,
+            color: "#F7690E",
+            distance: 130,
+            opacity: 0.9,
+            width: 2,
+          },
+          move: {
+            enable: true,
+            speed: 3.5, // Faster, fluid motion
+            outModes: { default: "bounce" },
+          },
+          opacity: { value: 0.9 },
+          shape: { type: "circle" },
+          size: { value: { min: 1, max: 3 } },
+        },
+        detectRetina: true,
+      }}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        pointerEvents: "none", // ✅ no cursor style change
+      }}
     />
   );
 };

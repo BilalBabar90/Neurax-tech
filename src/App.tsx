@@ -31,7 +31,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <CursorDot /> {/* ✅ Add dot cursor here */}
+          {/* <CursorDot /> ✅ Add dot cursor here */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
