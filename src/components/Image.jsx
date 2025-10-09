@@ -22,9 +22,13 @@ const ImageCarouselMarquee = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden py-10 bg-background relative">
+    <div className="relative w-full overflow-hidden py-10 bg-background">
+      {/* Smoky blur edges */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-[15%] bg-gradient-to-r from-background via-background/80 to-transparent z-10 blur-[30px]" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-[15%] bg-gradient-to-l from-background via-background/80 to-transparent z-10 blur-[30px]" />
+
+      {/* Scrolling content */}
       <div className="flex w-max animate-scroll">
-        {/* ✅ Duplicate images for seamless infinite loop */}
         {[...images, ...images].map((src, index) => (
           <div
             key={index}
@@ -34,9 +38,8 @@ const ImageCarouselMarquee = () => {
               <img
                 src={src}
                 alt={`Slide ${index}`}
-                className=" object-cover"
-
-                style={{width : "600px" , height : "400px"}}
+                className="object-cover"
+                style={{ width: "600px", height: "400px" }}
               />
             </div>
           </div>
