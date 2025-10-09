@@ -23,7 +23,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden neural-grid-enhanced " style={{marginTop : "140px"}}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden neural-grid-enhanced " style={{ marginTop: "140px" }}>
       {/* Particle Background */}
 
       {/* Background Image with Overlay */}
@@ -111,10 +111,11 @@ export const Hero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-2xl mx-auto"
           >
             {[
-              { value: "50+", label: "AI Projects", color: "text-primary" },
-              { value: "15+", label: "Industries", color: "text-accent" },
-              { value: "200%", label: "Avg ROI", color: "text-primary" },
-              { value: "99%", label: "Client Success", color: "text-accent" },
+              { value: "50+", label: "AI Projects Delivered", color: "text-primary" },
+              { value: "12+", label: "Industries Served", color: "text-accent" },
+              { value: "185%", label: "Average ROI", color: "text-primary" },
+              { value: "93%", label: "Client Satisfaction", color: "text-accent" },
+
             ].map((stat, i) => (
               <motion.div
                 key={i}
