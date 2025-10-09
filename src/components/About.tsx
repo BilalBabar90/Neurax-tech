@@ -44,7 +44,7 @@ export const About = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -95,7 +95,7 @@ export const About = () => {
             },
           ].map((cap, i) => (
             <motion.div key={i} variants={item}>
-              <Card className="service-card p-6 group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+              <Card className="service-card group hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                 <CardContent className="flex items-start gap-4 pt-2">
                   <div
                     className={`p-3 rounded-xl bg-${cap.color}/10 flex-shrink-0 group-hover:bg-${cap.color}/20 transition-all duration-300`}
@@ -175,19 +175,6 @@ export const About = () => {
         </motion.div>
       </div>
 
-      {/* Benefits Header */}
-      <motion.div
-        className="text-center max-w-3xl mx-auto mb-16 pt-10"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-2xl md:text-5xl font-bold mb-6">
-          Benefits of starting an AI project with consulting{" "}
-          <span className="glow-text"></span>
-        </h2>
-      </motion.div>
 
       <motion.div
         className="container mx-auto px-6"

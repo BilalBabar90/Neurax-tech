@@ -209,7 +209,7 @@ export const FlagShip = () => {
 
                                 <CardContent className="p-0">
                                     {/* Tech Stack */}
-                                    <div className="mb-4">
+                                    {/* <div className="mb-4">
                                         <span className="text-sm font-semibold text-foreground mb-2 block">
                                             Technologies:
                                         </span>
@@ -224,7 +224,7 @@ export const FlagShip = () => {
                                                 </Badge>
                                             ))}
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     {/* Button */}
                                     <button

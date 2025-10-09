@@ -35,7 +35,7 @@ export default function VisionSections() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-background to-muted/20 pt-10" id="vision">
+    <section className="bg-gradient-to-b from-background to-muted/20" id="vision">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
