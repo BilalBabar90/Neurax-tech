@@ -67,8 +67,8 @@ export const Services = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-semibold mb-4 text-gray-900">
-            Our Services
+               <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="glow-text">Our Services</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             We offer expert design, development, SEO, and AI integration services
