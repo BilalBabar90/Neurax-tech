@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { ParticleBackground } from "./ParticleBackground";
+// import { ParticleBackground } from "./ParticleBackground";
 import {
   Award,
   Users,
@@ -39,7 +39,7 @@ export const About = () => {
       id="about"
       className="relative bg-gradient-to-b from-muted/20 to-background"
     >
-      <ParticleBackground className="opacity-20" density="low" />
+      {/* <ParticleBackground className="opacity-20" density="low" /> */}
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

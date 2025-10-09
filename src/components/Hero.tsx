@@ -25,7 +25,6 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden neural-grid-enhanced " style={{marginTop : "140px"}}>
       {/* Particle Background */}
-      <ParticleBackground density="high" />
 
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
