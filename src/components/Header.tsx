@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X, Brain, Zap } from "lucide-react";
 import { useState } from "react";
-import { ParticleBackground } from "./ParticleBackground";
 // import img from "../images/neurax.png";
 
 export const Header = () => {
@@ -9,7 +8,6 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-            <ParticleBackground density="high" />
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}

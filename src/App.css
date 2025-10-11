@@ -70,3 +70,56 @@
   display: flex;
   animation: scroll 25s linear infinite;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Glowing Animated Grid Background === */
+.neural-grid-enhanced {
+  position: relative;
+  overflow: hidden;
+  background-color: #000; /* fallback color */
+}
+
+/* Grid lines */
+.neural-grid-enhanced::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#ff8000 1px, transparent 1px),
+    linear-gradient(90deg, #ff8000 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 10s linear infinite;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Subtle glow overlay */
+.neural-grid-enhanced::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 128, 0, 0.15), transparent 70%);
+  z-index: 0;
+}
+
+/* Animation */
+@keyframes gridMove {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 60px 60px, 60px 60px;
+  }
+}
