@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Shield } from "lucide-react";
 import Image2 from "../images/5.jpg";
 import Image3 from "../images/1.jpg";
-import Image4 from "../images/9.png";
+import Image4 from "../images/12.jpg";
 
 export const Projects = () => {
   const caseStudies = [
