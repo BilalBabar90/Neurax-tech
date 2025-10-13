@@ -1,10 +1,22 @@
+import { Footer } from "@/components/Footer";
+import VisionSections from "@/components/Vision";
+import Header from "@/components/Web";
+
 import React from "react";
+
 
 export default function Vision() {
   return (
-    <div>
-      <h1>Our Vision</h1>
-      <p>This is the Vision page. Add your content here.</p>
-    </div>
+      <>
+      <Header/>
+   
+      <div style={{marginTop : "125px"}}>
+   
+      </div>
+      <VisionSections/>
+   
+   
+      <Footer/>
+      </>
   );
 }
