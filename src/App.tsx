@@ -7,7 +7,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Loader from "./components/ui/Loader";
-import CursorDot from "./components/ui/CustomCursor"; // ✅ Import CursorDot
+import CursorDot from "./components/ui/CustomCursor";
+
+// ✅ Import newly created pages
+import Vision from "./pages/Vision";
+import Case_Studies from "./pages/Case_Studies";
 
 const queryClient = new QueryClient();
 
@@ -31,9 +35,11 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {/* <CursorDot /> ✅ Add dot cursor here */}
+          {/* <CursorDot /> */}
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/vision" element={<Vision />} /> {/* ✅ New route */}
+            <Route path="/Case_Studies" element={<Case_Studies />} /> {/* ✅ New route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
